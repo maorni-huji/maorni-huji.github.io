@@ -14,6 +14,9 @@ import numpy as np
 
 
 class Competitor:
+    DEFAULT_PARTICIPANTS = "Server/participants.xlsx"
+    DEFAULT_WINNERS = "Server/winners.xlsx"
+
     def __init__(self, comp_names: list, group_name):
         self.competitors = comp_names
         self.group_name = group_name
@@ -36,7 +39,7 @@ class Tournament:
         self.participants_out = []  # participants out of the tournament (and want to keep playing for fun or rating)
         self.stage = 0
 
-    def fetch_participants(self, file_path):
+    def fetch_participants(self, file_path=Competitor.DEFAULT_PARTICIPANTS):
         """
         Parses the participants google form answers into python object
         :param file_path: The participants' Excel file location
@@ -76,7 +79,7 @@ class Tournament:
             print(competitors)
         print()
 
-    def fetch_winners(self, file_path):
+    def fetch_winners(self, file_path=Competitor.DEFAULT_WINNERS):
         """
         Parses the names of the winning groups (from Google forms) into the class
         :param file_path: The winner groups Excel file location

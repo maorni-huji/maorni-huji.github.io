@@ -28,7 +28,11 @@ def server_control():
             while input(" > Fetch " + ("participants" if "FETCH_P" == command else "winners") + "? (Y/N) ") != "Y":
                 path = input(" > Enter the location of the file to load data from:")
 
-            tournament.fetch_participants(path) if "FETCH_P" == command else tournament.fetch_winners(path)
+            if "" != path:
+                tournament.fetch_participants(path) if "FETCH_P" == command else tournament.fetch_winners(path)
+
+            else:  # open default file
+                tournament.fetch_participants() if "FETCH_P" == command else tournament.fetch_winners()
 
             print(" < " + ("participants" if "FETCH_P" == command else "winners") + " fetched successfully")
 
