@@ -2,12 +2,13 @@
 import pygame
 import sys
 import random
+import default_snake
 
 # Initialize Pygame
 pygame.init()
 
 # Constants
-WIDTH, HEIGHT = 600, 400
+WIDTH, HEIGHT = 600, 600
 GRID_SIZE = 20
 SNAKE_SIZE = 20
 FPS = 10
@@ -17,23 +18,24 @@ WHITE = (255, 255, 255)
 BLACK = (0,0,0)
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
+BLUE = (0, 0, 255)
 
 # Snake class
 class Snake:
-    def __init__(self):
+    def __init__(self, starting_pos : tuple, color : tuple):
         self.length = 1
-        self.positions = [((WIDTH // 2), (HEIGHT // 2))]
+        self.positions = [starting_pos]
         self.direction = random.choice([UP, DOWN, LEFT, RIGHT])
-        self.color = GREEN
+        self.color = color
 
     def get_head_position(self):
         return self.positions[0]
 
-    def update(self):
+    def update(self, other_snake_pos : [tuple]):
         cur = self.get_head_position()
         x, y = self.direction
         new = (((cur[0] + (x * GRID_SIZE)) % WIDTH), (cur[1] + (y * GRID_SIZE)) % HEIGHT)
-        if len(self.positions) > 2 and new in self.positions[2:]:
+        if len(self.positions) > 2 and new in self.positions[2:] or new in other_snake_pos:
             self.reset()
         else:
             self.positions.insert(0, new)
@@ -81,7 +83,8 @@ def main():
     surface = pygame.Surface(screen.get_size())
     surface = surface.convert()
 
-    snake = Snake()
+    snake_1 = Snake((60,60), BLUE)
+    snake_2 = Snake((540,540), GREEN)
     food = Food()
 
     while True:
@@ -89,26 +92,21 @@ def main():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
-            elif event.type == pygame.KEYDOWN:
-                if event.key == pygame.W:
-                    if snake.direction != DOWN:
-                        snake.direction = UP
-                elif event.key == pygame.S:
-                    if snake.direction != UP:
-                        snake.direction = DOWN
-                elif event.key == pygame.A:
-                    if snake.direction != RIGHT:
-                        snake.direction = LEFT
-                elif event.key == pygame.D:
-                    if snake.direction != LEFT:
-                        snake.direction = RIGHT
+        snake_1.direction = default_snake.think(food.position, snake_1.get_head_position(), snake_1.length, snake_1.direction)
+        snake_2.direction = default_snake.think(food.position, snake_2.get_head_position(), snake_2.length, snake_2.direction)
 
-        snake.update()
-        if snake.get_head_position() == food.position:
-            snake.length += 1
+
+        snake_1.update(snake_2.positions)
+        snake_2.update(snake_1.positions)
+        if snake_1.get_head_position() == food.position:
+            snake_1.length += 1
+            food.randomize_position()
+        elif snake_2.get_head_position() == food.position:
+            snake_2.length += 1
             food.randomize_position()
         surface.fill(BLACK)
-        snake.render(surface)
+        snake_1.render(surface)
+        snake_2.render(surface)
         food.render(surface)
         screen.blit(surface, (0, 0))
         pygame.display.update()
