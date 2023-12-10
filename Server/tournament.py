@@ -1,7 +1,6 @@
 # This file calculates who plays verses who and saves the results in it according to the users' reports
-import numpy
 import pandas as pd
-import numpy as np
+from random import choice
 
 # Who won the game form:
 # edit - https://docs.google.com/forms/d/1bpUep3OJk6Lx0wG3vYGh91DKMyjE9XEtcPc_vk49U2k/edit
@@ -12,6 +11,10 @@ import numpy as np
 # edit - https://docs.google.com/forms/d/1XQB1ZfV5IWo0DV9wPTN_Z5Djd7rPNp5p1mmdxkb0n0M/edit
 # results - https://docs.google.com/spreadsheets/d/1eTYPuTH6OzPgOxFmy-78SW6aQ3jH9pkksxTKOlegOhU/edit?resourcekey#gid=443634803
 # publish - https://forms.gle/m8ocsvYgksHqcFy3A
+#
+# Website:
+# https://maorni-huji.github.io/
+# edit the website by editing index.html and push it to GitHub (maorni-huji.github.io)
 
 
 class Competitor:
@@ -20,6 +23,7 @@ class Competitor:
 
     def __init__(self, comp_names: list[str], group_name):
         self.group_name = Competitor.edit_group_name(comp_names, group_name)
+        self.avoided_battle = False
         self.score = 0  # inner score, used for the system decisions of who plays verses who (it doesn't say who wins)
 
         if 0 == len(comp_names) or "" == group_name:  # should never happen
@@ -54,17 +58,39 @@ class Tournament:
 
     def choose_pairs(self):
         """
-        Chooses pairs to compete in the current tournament stage
-        :return: A list of pairs to compete each other in the tournament,
-                 and a list of pairs who lost the game to compete each other just for fun
+        Chooses pairs to compete in the current tournament stage (it updates self.compete_in)
+        :return: In case there is an odd number of players, it returns the group that doesn't have anyone to compete with,
+                 otherwise - it returns None
+                 Maybe: return a list of pairs who lost the game to compete each other just for fun
         """
-        pass
+        odd_player = None
 
-    def publish_pairs(self):
+        if len(self.participants_in) % 2 == 1:  # in case there is an odd number of players
+            for player in self.participants_in:
+                if not player.avoided_battle:
+                    odd_player = player
+                    player.avoided_battle = True
+                    break
+
+            if odd_player is None:  # everyone has already avoided a game, just pick one randomly
+                for player in self.participants_in:  # reset
+                    player.avoided_battle = False
+                odd_player = choice(self.participants_in)
+                odd_player.avoided_battle = True
+
+        # choose the players that will compete each other
+        players_in = [group.group_name for group in self.participants_in if group is not odd_player]
+
+        self.compete_in = [(players_in[i], players_in[i + 1]) for i in range(0, len(players_in), 2)]
+
+        return odd_player
+
+    def publish_pairs(self, odd_player):
         """
         Publishes the competitors who compete each other in the current stage
         It can edit index.html or edit an online Google sheets
-        :return: None, it edits the index.html
+        :param odd_player: The player who doesn't have someone to compete against (None if there isn's such a player)
+        :return: None, it edits the index.html (and automatically pushes the content to Git)
         """
         pass
 
