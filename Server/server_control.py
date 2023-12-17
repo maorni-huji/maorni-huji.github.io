@@ -18,13 +18,14 @@ def server_control():
             print("? - show list of commands",
                   "EXIT - exit the server control",
                   "FETCH_P - fetch participants from Google forms",
+                  "SET_BATTLES - set the battles between the players",
                   "FETCH_W - fetch winning users from Google forms",
                   "UPDATE_IN - update the groups that are still in the game for Google forms",
                   "EDIT_GROUP - edit the details of a specific group",
                   sep="\n")
 
         elif "FETCH_P" == command or "FETCH_W" == command:
-            path = input(" > Enter the location of the file to load data from:")
+            path = input(" > Enter the location of the file to load data from: ")
             while input(" > Fetch " + ("participants" if "FETCH_P" == command else "winners") + "? (Y/N) ") != "Y":
                 path = input(" > Enter the location of the file to load data from:")
 
@@ -35,6 +36,10 @@ def server_control():
                 tournament.fetch_participants() if "FETCH_P" == command else tournament.fetch_winners()
 
             print(" < " + ("participants" if "FETCH_P" == command else "winners") + " fetched successfully")
+
+        elif "SET_BATTLES" == command:
+            tournament.choose_pairs()
+            tournament.publish_pairs()
 
         elif "UPDATE_IN" == command:
             tournament.update_google_form()
