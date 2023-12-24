@@ -9,13 +9,10 @@ h1 {
   margin-bottom: 10px;
 }
 
-h2 {
-  text-align: center;
-  font-size: 40px;
-}
-
 h2 a {
   text-decoration: none;
+  text-align: center;
+  font-size: 40px;
 }
 
 table {
