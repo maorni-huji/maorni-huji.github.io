@@ -20,8 +20,8 @@ import os
 
 
 class Competitor:
-    DEFAULT_PARTICIPANTS = "Server/participants.xlsx"
-    DEFAULT_WINNERS = "Server/winners.xlsx"
+    DEFAULT_PARTICIPANTS = r"C:\Users\TLP-001\PycharmProjects\ShabatMadat\Server\participants.xlsx"
+    DEFAULT_WINNERS = r"C:\Users\TLP-001\PycharmProjects\ShabatMadat\Server\winners.xlsx"
 
     def __init__(self, comp_names: list[str]):
         self.group_name = Competitor.edit_group_name(comp_names)
