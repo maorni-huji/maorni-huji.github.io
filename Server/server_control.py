@@ -105,7 +105,7 @@ def server_auto_control():
               r"  > Enter the table https://docs.google.com/spreadsheets/d/1IyzT8g9rnnWTDLsSvEwOAX9BEZAHkCDNzbdMkDwWO9s/edit?resourcekey#gid=1329863517," + "\n"
               r"    and copy its values to C:\Users\TLP-001\PycharmProjects\ShabatMadat\Server\winners.xlsx")
         wait()
-        tournament.fetch_winners(odd_player)
+        tournament.fetch_winners(odd_player=odd_player)
 
         i += 1
         the_winner = tournament.is_done()
