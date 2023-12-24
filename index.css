@@ -1,7 +1,21 @@
+* {
+  direction: rtl;
+}
+
 h1 {
   text-align: center;
   font-size: 60px;
   font-family: sans-serif;
+  margin-bottom: 10px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 40px;
+}
+
+h2 a {
+  text-decoration: none;
 }
 
 table {
@@ -9,14 +23,17 @@ table {
   font-size: 20px;
   font-family: sans-serif;
   border-collapse: collapse;
-  direction: rtl;
   width: 80%;
-  margin-left: 10%;
+  margin-right: 10%;
 }
 
 table, th, td {
   border: 1px solid black;
   text-align: center;
+}
+
+th, td {
+  width: 50%;
 }
 
 tr {

@@ -1,6 +1,8 @@
 # This file calculates who plays verses who and saves the results in it according to the users' reports
 import pandas as pd
-from random import choice
+from random import choice, shuffle
+from colorama import Fore, Style
+import os
 
 # Who won the game form:
 # edit - https://docs.google.com/forms/d/1bpUep3OJk6Lx0wG3vYGh91DKMyjE9XEtcPc_vk49U2k/edit
@@ -21,18 +23,18 @@ class Competitor:
     DEFAULT_PARTICIPANTS = "Server/participants.xlsx"
     DEFAULT_WINNERS = "Server/winners.xlsx"
 
-    def __init__(self, comp_names: list[str], group_name):
-        self.group_name = Competitor.edit_group_name(comp_names, group_name)
+    def __init__(self, comp_names: list[str]):
+        self.group_name = Competitor.edit_group_name(comp_names)
         self.avoided_battle = False
         self.won = False
         self.score = 0  # inner score, used for the system decisions of who plays verses who (it doesn't say who wins)
 
-        if 0 == len(comp_names) or "" == group_name:  # should never happen
+        if 0 == len(comp_names):  # should never happen
             raise Exception("error - illegal group details")
 
     @staticmethod
-    def edit_group_name(comp_names: list[str], group_name: str):
-        return group_name + " (" + ", ".join(comp_names) + ")"
+    def edit_group_name(comp_names: list[str]):
+        return "הקבוצה של: " + ", ".join(comp_names)
 
     def __str__(self):
         return self.group_name
@@ -48,14 +50,31 @@ class Tournament:
 
     def fetch_participants(self, file_path=Competitor.DEFAULT_PARTICIPANTS):
         """
-        Parses the participants google form answers into python object
+        Parses the participants google form answers into python object,
+        and decide who are the couples that will compete together
         :param file_path: The participants' Excel file location
         :return: None, it updates the class's variable itself
         """
+        self.participants_in = []
+        comp_names = []
+
         content = pd.read_excel(file_path).to_dict()
-        for i in range(len(content["משתתף 1"])):
-            comp_names = [user for user in [content["משתתף 1"][i], content["משתתף 2"][i], content["משתתף 3 (רק באישור שלנו)"][i]] if isinstance(user, str)]
-            self.participants_in += [Competitor(comp_names=comp_names, group_name=content["שם הקבוצה"][i])]
+
+        for i in range(len(content["איך קוראים לך?"])):
+            if isinstance(content["איך קוראים לך?"][i], str):
+                comp_names += [content["איך קוראים לך?"][i]]
+            # comp_names = [user for user in [content["משתתף 1"][i], content["משתתף 2"][i], content["משתתף 3 (רק באישור שלנו)"][i]] if isinstance(user, str)]
+            # self.participants_in += [Competitor(comp_names=comp_names, group_name=content["שם הקבוצה"][i])]
+
+        shuffle(comp_names)
+
+        if len(comp_names) % 2 == 0:
+            self.participants_in = [Competitor(comp_names=[comp_names[i], comp_names[i + 1]])
+                                    for i in range(0, len(comp_names), 2)]
+        else:  # there is one group with 3 participants
+            self.participants_in = [Competitor(comp_names=[comp_names[i], comp_names[i + 1]])
+                                    for i in range(0, len(comp_names) - 1, 2)]
+            self.participants_in[0] = Competitor(comp_names=[comp_names[0], comp_names[1], comp_names[-1]])
 
     def choose_pairs(self):
         """
@@ -84,12 +103,13 @@ class Tournament:
 
         return odd_player
 
-    def publish_pairs(self, odd_player, html_file_path):
+    def publish_pairs(self, odd_player, html_file_path, upload_to_github):
         """
         Publishes the competitors who compete each other in the current stage
         It can edit index.html or edit an online Google sheets
         :param odd_player: The player who doesn't have someone to compete against (None if there isn's such a player)
         :param html_file_path: The path to the html file to publish the results at
+        :param upload_to_github: Whether to upload the site to GitHub or just change it locally
         :return: None, it edits the index.html (and automatically pushes the content to Git)
         """
         # build the html table object
@@ -102,9 +122,17 @@ class Tournament:
         for pair in self.compete_in:
             table_html += """
     <tr>
-        <td>""" + pair[0].group_name + """
-        <td>""" + pair[1].group_name + """
+        <td>""" + pair[0].group_name + """</td>
+        <td>""" + pair[1].group_name + """</td>
     </tr>"""
+
+        if odd_player:
+            table_html += """
+    <tr>
+        <td>""" + odd_player.group_name + """</td>
+        <td>אוטומטית עולה לסיבוב הבא (מזליסטים)</td>
+    </tr>"""
+
         table_html += "\n</table>"
 
         # append the table to the site
@@ -117,43 +145,54 @@ class Tournament:
             total = web_content[:before] + table_html + web_content[after:]
             the_web.write(total)
 
+        # upload the site to GitHub
+        if upload_to_github:
+            Tournament.upload_site_to_github()
+
+    @staticmethod
+    def upload_site_to_github():
+        """
+        It uploads index.html to Github using push requests, so everyone can access it in https://maorni-huji.github.io/
+        This action should be run from ShabatMadat directory, not from one of its subdirectories
+        :return: None
+        """
+        print(Fore.LIGHTMAGENTA_EX, end="")
+        os.system("git status")
+
+        print(Style.RESET_ALL, end="")
+
     def update_google_form(self):
         """
         Prints to the screen the name of the winning competitors - so the program's runner can copy those names
         and paste them in the Google forms that asks who won the current game
         :return: None, it prints the names of the self.participants_in to the screen
         """
-        print("Competitors who are currently in the game: ")
+        print("    Competitors who are currently in the game: ")
         for competitors in self.participants_in:
-            print(competitors)
-        print()
+            print("    " + str(competitors))
 
-    def fetch_winners(self, file_path=Competitor.DEFAULT_WINNERS):
+    def fetch_winners(self, file_path=Competitor.DEFAULT_WINNERS, odd_player=None):
         """
         Parses the names of the winning groups (from Google forms) into the class
         :param file_path: The winner groups Excel file location
+        :param odd_player: The player who didn't have competitor to compete against and automatically wins
         :return: None, it updates the data
         """
         content = pd.read_excel(file_path).to_dict()
-        print("content:", content["איזה זוג ניצח מביניכם?"].values())
 
         for winner in content["איזה זוג ניצח מביניכם?"].values():
-            win_player = self.find_competitor(group_name=winner)
-            if win_player:
-                win_player.won = True
-            else:
-                raise Exception("Competitor group '" + winner + "' was not found in the participants list")
+            if isinstance(winner, str):
+                win_player = self.find_competitor(group_name=winner)
+                if win_player is not None:
+                    win_player.won = True
+                elif odd_player.group_name != winner:
+                    raise Exception("Competitor group '" + winner + "' was not found in the participants list")
 
-        print("Compete in:", self.compete_in)
         for p1, p2 in self.compete_in:
             win_player, lost = (p1, p2) if p1.won else (p2, p1)
-
-            print("win_player:", str(win_player), "lost:", str(lost))
             self.participants_in.remove(lost)
             self.participants_out += [lost]
-
             lost.won = win_player.won = False
-
 
         #for winner in content["איזה זוג ניצח מביניכם?"]:
         #    for pair in self.compete_in:
@@ -185,6 +224,16 @@ class Tournament:
                     break
 
         return the_group
+
+    def is_done(self):
+        """
+        Checks if the tournament is done or not and return the winner
+        :return: A Competitor object of the winner, or None if the competitor is not done
+        """
+        if len(self.participants_in) == 1:
+            return self.participants_in[0]
+        else:
+            return None
 
     def pop_competitor(self, group_name: str):
         """
