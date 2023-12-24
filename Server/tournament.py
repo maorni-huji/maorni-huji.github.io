@@ -103,13 +103,16 @@ class Tournament:
 
         return odd_player
 
-    def publish_pairs(self, odd_player, html_file_path, upload_to_github):
+    def publish_pairs(self, odd_player, html_file_path,
+                      upload_to_github, game_token: str = "", stage_num: int = 0):
         """
         Publishes the competitors who compete each other in the current stage
         It can edit index.html or edit an online Google sheets
         :param odd_player: The player who doesn't have someone to compete against (None if there isn's such a player)
         :param html_file_path: The path to the html file to publish the results at
         :param upload_to_github: Whether to upload the site to GitHub or just change it locally
+        :param game_token: a unique token of the current tournament to be added to the git commits
+        :param stage_num: the number of the current stage
         :return: None, it edits the index.html (and automatically pushes the content to Git)
         """
         # build the html table object
@@ -147,18 +150,20 @@ class Tournament:
 
         # upload the site to GitHub
         if upload_to_github:
-            Tournament.upload_site_to_github()
+            Tournament.upload_site_to_github(game_token, stage_num)
 
     @staticmethod
-    def upload_site_to_github():
+    def upload_site_to_github(game_token: str, stage_num: int):
         """
         It uploads index.html to Github using push requests, so everyone can access it in https://maorni-huji.github.io/
         This action should be run from ShabatMadat directory, not from one of its subdirectories
+        :param game_token: a unique token of the current tournament to be added to the git commits
+        :param stage_num: the number of the current stage
         :return: None
         """
         print(Fore.LIGHTMAGENTA_EX, end="")
-        os.system("git status")
-
+        os.system("git add --all")
+        os.system("git commit -m \"Committing index for Game {" + game_token + "}, Stage " + str(stage_num) + "\"")
         print(Style.RESET_ALL, end="")
 
     def update_google_form(self):

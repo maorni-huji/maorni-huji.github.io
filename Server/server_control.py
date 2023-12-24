@@ -1,5 +1,6 @@
 from Server.tournament import Tournament
 from colorama import Fore, Style
+from random import randint
 import os
 
 INDEX_HTML_PATH = r"C:\Users\TLP-001\PycharmProjects\ShabatMadat\index.html"
@@ -43,7 +44,8 @@ def server_control():
 
         elif "SET_BATTLES" == command:
             odd_player = tournament.choose_pairs()
-            tournament.publish_pairs(odd_player=odd_player, html_file_path=INDEX_HTML_PATH, upload_to_github=True)
+            tournament.publish_pairs(odd_player=odd_player, html_file_path=INDEX_HTML_PATH,
+                                     upload_to_github=True, game_token="Hand Server", stage_num=0)
 
         elif "UPDATE_IN" == command:
             tournament.update_google_form()
@@ -64,8 +66,9 @@ def server_auto_control():
     """
     tournament = Tournament()
     os.system("cd ..")  # adjust for uploading the file process
+    game_token = str(randint(0, 99999999))
 
-    print(" >> Welcome to Server Auto Control\n"
+    print(" >> Welcome to Server Auto Control - Game Token: " + Fore.CYAN + game_token + Style.RESET_ALL + "\n"
           r"1. To start, make sure that the form https://docs.google.com/forms/d/1XQB1ZfV5IWo0DV9wPTN_Z5Djd7rPNp5p1mmdxkb0n0M/edit has no answers, and so as the table below in (3)" + "\n"
           r"2. Please send everyone the poll https://forms.gle/m8ocsvYgksHqcFy3A, so each one who competes would say so" + "\n"
           r"3. When everyone has answered the form, enter https://docs.google.com/spreadsheets/d/1eTYPuTH6OzPgOxFmy-78SW6aQ3jH9pkksxTKOlegOhU/edit?resourcekey#gid=443634803," + "\n"
@@ -92,7 +95,8 @@ def server_auto_control():
 
         odd_player = tournament.choose_pairs()
         print(r"  > Alright, now - publishing the competitors! Some GitHub uploads would run automatically")
-        tournament.publish_pairs(odd_player=odd_player, html_file_path=INDEX_HTML_PATH, upload_to_github=True)
+        tournament.publish_pairs(odd_player=odd_player, html_file_path=INDEX_HTML_PATH,
+                                 upload_to_github=True, game_token=game_token, stage_num=i)
         print(r"  > Send everyone to refresh the link https://maorni-huji.github.io/ so they can see who they are playing against")
         wait()
 
