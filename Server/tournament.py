@@ -163,7 +163,8 @@ class Tournament:
         """
         print(Fore.LIGHTMAGENTA_EX, end="")
         os.system("git add --all")
-        os.system("git commit -m \"Committing index for Game {" + game_token + "}, Stage " + str(stage_num) + "\"")
+        os.system("git commit -m \"Committing index.html for Game {" + game_token + "}, Stage " + str(stage_num) + "\"")
+        os.system("git push origin")
         print(Style.RESET_ALL, end="")
 
     def update_google_form(self):
