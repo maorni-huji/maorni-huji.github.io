@@ -1,5 +1,7 @@
 from Server.tournament import Tournament
 
+INDEX_HTML_PATH = r"C:\Users\TLP-001\PycharmProjects\ShabatMadat\index.html"
+
 
 def server_control():
     """
@@ -39,7 +41,7 @@ def server_control():
 
         elif "SET_BATTLES" == command:
             tournament.choose_pairs()
-            tournament.publish_pairs()
+            tournament.publish_pairs(odd_player=None, html_file_path=INDEX_HTML_PATH)
 
         elif "UPDATE_IN" == command:
             tournament.update_google_form()

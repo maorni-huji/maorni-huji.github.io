@@ -24,6 +24,7 @@ class Competitor:
     def __init__(self, comp_names: list[str], group_name):
         self.group_name = Competitor.edit_group_name(comp_names, group_name)
         self.avoided_battle = False
+        self.won = False
         self.score = 0  # inner score, used for the system decisions of who plays verses who (it doesn't say who wins)
 
         if 0 == len(comp_names) or "" == group_name:  # should never happen
@@ -78,21 +79,43 @@ class Tournament:
                 odd_player = choice(self.participants_in)
                 odd_player.avoided_battle = True
 
-        # choose the players that will compete each other
-        players_in = [group.group_name for group in self.participants_in if group is not odd_player]
-
-        self.compete_in = [(players_in[i], players_in[i + 1]) for i in range(0, len(players_in), 2)]
+        up_to = len(self.participants_in) if not odd_player else len(self.participants_in) - 1
+        self.compete_in = [(self.participants_in[i], self.participants_in[i + 1]) for i in range(0, up_to, 2)]
 
         return odd_player
 
-    def publish_pairs(self, odd_player):
+    def publish_pairs(self, odd_player, html_file_path):
         """
         Publishes the competitors who compete each other in the current stage
         It can edit index.html or edit an online Google sheets
         :param odd_player: The player who doesn't have someone to compete against (None if there isn's such a player)
+        :param html_file_path: The path to the html file to publish the results at
         :return: None, it edits the index.html (and automatically pushes the content to Git)
         """
-        pass
+        # build the html table object
+        table_html = """<table>
+    <tr>
+        <th>קבוצה א'</th>
+        <th>קבוצה ב'</th>
+    </tr>"""
+
+        for pair in self.compete_in:
+            table_html += """
+    <tr>
+        <td>""" + pair[0].group_name + """
+        <td>""" + pair[1].group_name + """
+    </tr>"""
+        table_html += "\n</table>"
+
+        # append the table to the site
+        with open(html_file_path, "r", encoding="utf8") as the_web:
+            web_content = the_web.read()
+
+        with open(html_file_path, "w", encoding="utf8") as the_web:
+            before = web_content.index("<table>")
+            after = web_content.index("</table>") + len("</table>")
+            total = web_content[:before] + table_html + web_content[after:]
+            the_web.write(total)
 
     def update_google_form(self):
         """
@@ -112,16 +135,56 @@ class Tournament:
         :return: None, it updates the data
         """
         content = pd.read_excel(file_path).to_dict()
+        print("content:", content["איזה זוג ניצח מביניכם?"].values())
 
-        for winner in content["איזה זוג ניצח מביניכם?"]:
-            for pair in self.compete_in:
-                if winner in pair:
-                    loser = self.pop_competitor(group_name=(pair[0] if pair[0] != winner else pair[1]))
-                    if loser is not None:
-                        self.participants_out += [loser]
-                    else:
-                        raise Exception("Competitor not found competitors list")
+        for winner in content["איזה זוג ניצח מביניכם?"].values():
+            win_player = self.find_competitor(group_name=winner)
+            if win_player:
+                win_player.won = True
+            else:
+                raise Exception("Competitor group '" + winner + "' was not found in the participants list")
+
+        print("Compete in:", self.compete_in)
+        for p1, p2 in self.compete_in:
+            win_player, lost = (p1, p2) if p1.won else (p2, p1)
+
+            print("win_player:", str(win_player), "lost:", str(lost))
+            self.participants_in.remove(lost)
+            self.participants_out += [lost]
+
+            lost.won = win_player.won = False
+
+
+        #for winner in content["איזה זוג ניצח מביניכם?"]:
+        #    for pair in self.compete_in:
+        #        if winner in pair:
+        #            loser = self.pop_competitor(group_name=(pair[0] if pair[0] != winner else pair[1]))
+        #            if loser is not None:
+        #                self.participants_out += [loser]
+        #            else:
+        #                raise Exception("Competitor not found competitors list")
+        #            break
+
+    def find_competitor(self, group_name: str):
+        """
+        Returns the object of the wanted group by the group's name
+        :param group_name: the name of the group
+        :return: the object of the wanted group or None if not found
+        """
+        the_group = None
+
+        for group in self.participants_in:
+            if group.group_name == group_name:
+                the_group = group
+                break
+
+        if not the_group:
+            for group in self.participants_out:
+                if group.group_name == group_name:
+                    the_group = group
                     break
+
+        return the_group
 
     def pop_competitor(self, group_name: str):
         """
