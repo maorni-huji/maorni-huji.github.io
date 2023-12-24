@@ -14,7 +14,11 @@ import os
 # results - https://docs.google.com/spreadsheets/d/1eTYPuTH6OzPgOxFmy-78SW6aQ3jH9pkksxTKOlegOhU/edit?resourcekey#gid=443634803
 # publish - https://forms.gle/m8ocsvYgksHqcFy3A
 #
-# Website:
+# InfinityFree account and Website:
+# main page - https://dash.infinityfree.com/accounts (go to the control panel to edit the web)
+# website - https://maornimri45.infinityfreeapp.com/
+#
+# (Not updated) GitHub Website:
 # https://maorni-huji.github.io/
 # edit the website by editing index.html and push it to GitHub (maorni-huji.github.io)
 
@@ -104,7 +108,7 @@ class Tournament:
         return odd_player
 
     def publish_pairs(self, odd_player, html_file_path,
-                      upload_to_github, game_token: str = "", stage_num: int = 0):
+                      upload_to_github: bool = False, game_token: str = "", stage_num: int = 0):
         """
         Publishes the competitors who compete each other in the current stage
         It can edit index.html or edit an online Google sheets
@@ -149,8 +153,8 @@ class Tournament:
             the_web.write(total)
 
         # upload the site to GitHub
-        if upload_to_github:
-            Tournament.upload_site_to_github(game_token, stage_num)
+        # if upload_to_github:
+        #     Tournament.upload_site_to_github(game_token, stage_num)
 
     @staticmethod
     def upload_site_to_github(game_token: str, stage_num: int):
