@@ -14,12 +14,16 @@
     <link rel="icon" type="image/png" href="../snake_icon.png"/>
 
     <script>
-    if (!location.hash) {
-        location.hash = "#reloading";
-        location.reload(true);
-    } else {
-        location.hash = "#reloaded";
-    }
+        const MIN_MILLISECONDS_FOR_RELOAD = 10 * (10**3)
+        const d = (new Date()).getTime();
+
+        if ("" === document.cookie || d - parseInt(document.cookie) >= MIN_MILLISECONDS_FOR_RELOAD) {
+            // location.hash = "#reloading";
+            document.cookie = d.toString();
+            location.reload(true);
+        } else {
+            location.hash = "#reloaded";
+        }
     </script>
 </head>
 <body>
@@ -32,20 +36,20 @@
         <th>קבוצה ב'</th>
     </tr>
     <tr>
-        <td>הקבוצה של: אריה, שרי, דור</td>
-        <td>הקבוצה של: נכון, טון</td>
+        <td>הקבוצה של: לא נתמך עי גוגל, אלכס, עמרי</td>
+        <td>הקבוצה של: הקשבי, אריה</td>
     </tr>
     <tr>
-        <td>הקבוצה של: גור, רון</td>
-        <td>הקבוצה של: עמרי, אלכס</td>
+        <td>הקבוצה של: גור, עוד אחד</td>
+        <td>הקבוצה של: היייי, אור</td>
     </tr>
     <tr>
-        <td>הקבוצה של: הקשבי, לא נתמך עי גוגל</td>
-        <td>הקבוצה של: נועם, אור</td>
+        <td>הקבוצה של: רון, איי</td>
+        <td>הקבוצה של: המפקד, נכון</td>
     </tr>
     <tr>
-        <td>הקבוצה של: היייי, עוד אחד</td>
-        <td>הקבוצה של: איי, המפקד</td>
+        <td>הקבוצה של: נועם, דור</td>
+        <td>הקבוצה של: טון, שרי</td>
     </tr>
 </table>
 </body>
