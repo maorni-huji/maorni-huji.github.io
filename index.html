@@ -9,7 +9,7 @@
     <meta http-equiv="expires" content='0'>
     <meta http-equiv="pragma" content='no-cache'>
 
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index1.css">
     <title>The Snake Game</title>
     <link rel="icon" type="image/png" href="../snake_icon.png"/>
 
@@ -18,11 +18,9 @@
         const d = (new Date()).getTime();
 
         if ("" === document.cookie || d - parseInt(document.cookie) >= MIN_MILLISECONDS_FOR_RELOAD) {
-            // location.hash = "#reloading";
+            alert("heyy")
             document.cookie = d.toString();
             location.reload(true);
-        } else {
-            location.hash = "#reloaded";
         }
     </script>
 </head>
@@ -36,20 +34,20 @@
         <th>קבוצה ב'</th>
     </tr>
     <tr>
-        <td>הקבוצה של: היייי, דור, לא נתמך עי גוגל</td>
+        <td>הקבוצה של: עמרי, נועם, אלכס</td>
         <td>הקבוצה של: עוד אחד, המפקד</td>
     </tr>
     <tr>
-        <td>הקבוצה של: איי, גור</td>
-        <td>הקבוצה של: טון, שרי</td>
+        <td>הקבוצה של: אור, שרי</td>
+        <td>הקבוצה של: אריה, איי</td>
     </tr>
     <tr>
-        <td>הקבוצה של: אלכס, אור</td>
-        <td>הקבוצה של: עמרי, הקשבי</td>
+        <td>הקבוצה של: נכון, הקשבי</td>
+        <td>הקבוצה של: טון, לא נתמך עי גוגל</td>
     </tr>
     <tr>
-        <td>הקבוצה של: אריה, נכון</td>
-        <td>הקבוצה של: נועם, רון</td>
+        <td>הקבוצה של: רון, היייי</td>
+        <td>הקבוצה של: דור, גור</td>
     </tr>
 </table>
 </body>
