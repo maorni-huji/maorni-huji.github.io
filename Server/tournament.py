@@ -61,8 +61,8 @@ class Tournament:
         """
         Chooses pairs to compete in the current tournament stage (it updates self.compete_in)
         :return: In case there is an odd number of players, it returns the group that doesn't have anyone to compete with,
-                 otherwise - it returns None
-                 Maybe: return a list of pairs who lost the game to compete each other just for fun
+                otherwise - it returns None
+                Maybe: return a list of pairs who lost the game to compete each other just for fun
         """
         odd_player = None
 

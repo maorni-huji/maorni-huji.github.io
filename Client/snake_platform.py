@@ -41,11 +41,14 @@ class Snake:
             self.positions.insert(0, new)
             if len(self.positions) > self.length:
                 self.positions.pop()
+            return True
 
     def reset(self):
+        run = False
         self.length = 1
         self.positions = [((WIDTH // 2), (HEIGHT // 2))]
         self.direction = random.choice([UP, DOWN, LEFT, RIGHT])
+        return run
 
     def render(self, surface):
         for p in self.positions:
@@ -86,8 +89,8 @@ def main():
     snake_1 = Snake((60,60), BLUE)
     snake_2 = Snake((540,540), GREEN)
     food = Food()
-
-    while True:
+    run = True
+    while run:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
@@ -96,8 +99,12 @@ def main():
         snake_2.direction = default_snake.think(food.position, snake_2.get_head_position(), snake_2.length, snake_2.direction)
 
 
-        snake_1.update(snake_2.positions)
-        snake_2.update(snake_1.positions)
+        run = snake_1.update(snake_2.positions)
+        if (run == False):
+            break
+        run = snake_2.update(snake_1.positions)
+        if (run == False):
+            break
         if snake_1.get_head_position() == food.position:
             snake_1.length += 1
             food.randomize_position()

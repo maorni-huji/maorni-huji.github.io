@@ -18,13 +18,13 @@ def server_control():
 
         if "?" == command:  # show menu
             print("? - show list of commands",
-                  "EXIT - exit the server control",
-                  "FETCH_P - fetch participants from Google forms",
-                  "SET_BATTLES - set the battles between the players",
-                  "FETCH_W - fetch winning users from Google forms",
-                  "UPDATE_IN - update the groups that are still in the game for Google forms",
-                  "EDIT_GROUP - edit the details of a specific group",
-                  sep="\n")
+                    "EXIT - exit the server control",
+                    "FETCH_P - fetch participants from Google forms",
+                    "SET_BATTLES - set the battles between the players",
+                    "FETCH_W - fetch winning users from Google forms",
+                    "UPDATE_IN - update the groups that are still in the game for Google forms",
+                    "EDIT_GROUP - edit the details of a specific group",
+                    sep="\n")
 
         elif "FETCH_P" == command or "FETCH_W" == command:
             path = input(" > Enter the location of the file to load data from: ")
