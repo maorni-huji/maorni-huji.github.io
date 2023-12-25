@@ -1,18 +1,30 @@
 * {
   direction: rtl;
+  font-family: sans-serif;
 }
 
 h1 {
   text-align: center;
   font-size: 60px;
-  font-family: sans-serif;
   margin-bottom: 10px;
 }
 
-h2 a {
+h2, a {
   text-decoration: none;
   text-align: center;
   font-size: 40px;
+}
+
+a {
+  border: 5px solid purple;
+  padding: 10px;
+  color: purple;
+  transition-duration: 0.3s;
+}
+
+a:hover {
+  color: white;
+  background-color: purple;
 }
 
 table {

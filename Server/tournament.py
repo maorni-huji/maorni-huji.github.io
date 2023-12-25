@@ -186,8 +186,9 @@ class Tournament:
         Parses the names of the winning groups (from Google forms) into the class
         :param file_path: The winner groups Excel file location
         :param odd_player: The player who didn't have competitor to compete against and automatically wins
-        :return: None, it updates the data
+        :return: A list of groups that were both assigned as winners or both losers (by mistake)
         """
+        mistaken_groups = []
         content = pd.read_excel(file_path).to_dict()
 
         for winner in content["איזה זוג ניצח מביניכם?"].values():
@@ -199,20 +200,15 @@ class Tournament:
                     raise Exception("Competitor group '" + winner + "' was not found in the participants list")
 
         for p1, p2 in self.compete_in:
-            win_player, lost = (p1, p2) if p1.won else (p2, p1)
-            self.participants_in.remove(lost)
-            self.participants_out += [lost]
-            lost.won = win_player.won = False
+            if (p1.won and not p2.won) or (not p1.won and p2.won):
+                win_player, lost = (p1, p2) if p1.won else (p2, p1)
+                self.participants_in.remove(lost)
+                self.participants_out += [lost]
+                lost.won = win_player.won = False
+            else:
+                mistaken_groups += [(p1, p2)]
 
-        #for winner in content["איזה זוג ניצח מביניכם?"]:
-        #    for pair in self.compete_in:
-        #        if winner in pair:
-        #            loser = self.pop_competitor(group_name=(pair[0] if pair[0] != winner else pair[1]))
-        #            if loser is not None:
-        #                self.participants_out += [loser]
-        #            else:
-        #                raise Exception("Competitor not found competitors list")
-        #            break
+        return mistaken_groups
 
     def find_competitor(self, group_name: str):
         """

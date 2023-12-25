@@ -78,13 +78,13 @@ def server_auto_control():
     # pair the participants randomly
     tournament.fetch_participants()
     print(" >> Alright, the participants are in - now it's time to pair them! Luckily, it was just done\n"
-          " >> Starting the Game!\n")
+          " >> Starting the Game!")
 
     # start the game loop
     i = 1
     the_winner = tournament.is_done()
     while not the_winner:
-        print(Fore.BLUE + " >> Stage " + str(i) + ":" + Style.RESET_ALL)
+        print(Fore.BLUE + "\n >> Stage " + str(i) + ":" + Style.RESET_ALL)
 
         # initialise winners form and publish the competitors
         print(r"  > Delete all of the answers from https://docs.google.com/forms/d/1bpUep3OJk6Lx0wG3vYGh91DKMyjE9XEtcPc_vk49U2k/edit and " + "\n"
@@ -111,7 +111,17 @@ def server_auto_control():
               r"  > Enter the table https://docs.google.com/spreadsheets/d/1IyzT8g9rnnWTDLsSvEwOAX9BEZAHkCDNzbdMkDwWO9s/edit?resourcekey#gid=1329863517," + "\n"
               r"    and copy its values to C:\Users\TLP-001\PycharmProjects\ShabatMadat\Server\winners.xlsx")
         wait()
-        tournament.fetch_winners(odd_player=odd_player)
+        mistaken_groups = tournament.fetch_winners(odd_player=odd_player)
+
+        if mistaken_groups:  # some groups were both assigned as losers or both assigned as winners (by a mistake)
+            print(Fore.MAGENTA + "  > Some groups were not both assigned as winners or both as losers:")
+            j = 1
+            for mistaken_compete in mistaken_groups:
+                print("   " + str(j) + ".", mistaken_compete[0], "vs", mistaken_compete[1])
+                j += 1
+            print("  > Find out what happens with them, and when you figure out who are the winners -\n"
+                  r"    add their EXACT name to C:\Users\TLP-001\PycharmProjects\ShabatMadat\Server\winners.xlsx, or remove the loser's name" + Style.RESET_ALL)
+            wait()
 
         i += 1
         the_winner = tournament.is_done()
