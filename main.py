@@ -1,8 +1,10 @@
 from Server import server_control
+from Client import compete
 
 
 def main():
     # server_control.server_control()
+    compete.upload_opponent_file()
     server_control.server_auto_control()
 
 
