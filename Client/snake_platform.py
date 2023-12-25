@@ -3,121 +3,124 @@ import pygame
 import sys
 import random
 import default_snake
+import classes
 
-# Initialize Pygame
+#Initialize Pygame.
 pygame.init()
 
-# Constants
+#Constants.
 WIDTH, HEIGHT = 600, 600
 GRID_SIZE = 20
 SNAKE_SIZE = 20
 FPS = 10
 
-# Colors
+#Colors.
 WHITE = (255, 255, 255)
 BLACK = (0,0,0)
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 
-# Snake class
-class Snake:
-    def __init__(self, starting_pos : tuple, color : tuple):
-        self.length = 1
-        self.positions = [starting_pos]
-        self.direction = random.choice([UP, DOWN, LEFT, RIGHT])
-        self.color = color
-
-    def get_head_position(self):
-        return self.positions[0]
-
-    def update(self, other_snake_pos : [tuple]):
-        cur = self.get_head_position()
-        x, y = self.direction
-        new = (((cur[0] + (x * GRID_SIZE)) % WIDTH), (cur[1] + (y * GRID_SIZE)) % HEIGHT)
-        if len(self.positions) > 2 and new in self.positions[2:] or new in other_snake_pos:
-            self.reset()
-        else:
-            self.positions.insert(0, new)
-            if len(self.positions) > self.length:
-                self.positions.pop()
-            return True
-
-    def reset(self):
-        run = False
-        self.length = 1
-        self.positions = [((WIDTH // 2), (HEIGHT // 2))]
-        self.direction = random.choice([UP, DOWN, LEFT, RIGHT])
-        return run
-
-    def render(self, surface):
-        for p in self.positions:
-            pygame.draw.rect(surface, self.color, (p[0], p[1], SNAKE_SIZE, SNAKE_SIZE))
-
-
-# Food class
-class Food:
-    def __init__(self):
-        self.position = (0, 0)
-        self.color = RED
-        self.randomize_position()
-    
-    def set_food_color(self, color):
-        self.color = color
-
-    def randomize_position(self):
-        self.position = (random.randint(0, (WIDTH // GRID_SIZE) - 1) * GRID_SIZE,
-                         random.randint(0, (HEIGHT // GRID_SIZE) - 1) * GRID_SIZE)
-
-    def render(self, surface):
-        pygame.draw.rect(surface, self.color, (self.position[0], self.position[1], SNAKE_SIZE, SNAKE_SIZE))
-
-
-# Direction vectors
-UP = (0, -1)
-DOWN = (0, 1)
-LEFT = (-1, 0)
-RIGHT = (1, 0)
-
-# Main function
 def main():
+    #Initializing all the objects required for pygame.
     clock = pygame.time.Clock()
     screen = pygame.display.set_mode((WIDTH, HEIGHT), 0, 32)
     surface = pygame.Surface(screen.get_size())
     surface = surface.convert()
+    frame = 1
 
-    snake_1 = Snake((60,60), BLUE)
-    snake_2 = Snake((540,540), GREEN)
-    food = Food()
+    #Initializing the game objects.
+    blue_snake = classes.Snake((60,60), BLUE)
+    green_snake = classes.Snake((540,540), GREEN)
+    food = classes.Food()
+    superfood = classes.Superfood()
     run = True
+    
+    #Running the game.
     while run:
+        frame += 1
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
-        snake_1.direction = default_snake.think(food.position, snake_1.get_head_position(), snake_1.length, snake_1.direction)
-        snake_2.direction = default_snake.think(food.position, snake_2.get_head_position(), snake_2.length, snake_2.direction)
+                
+        #Replace "default_snake" with your own snake bot file, remember to also import your file at the top of this file!
+        blue_snake.direction = default_snake.think(food, superfood, blue_snake, green_snake)
+        green_snake.direction = default_snake.think(food, superfood, green_snake, blue_snake)
 
-
-        run = snake_1.update(snake_2.positions)
-        if (run == False):
-            break
-        run = snake_2.update(snake_1.positions)
-        if (run == False):
-            break
-        if snake_1.get_head_position() == food.position:
-            snake_1.length += 1
+        #Checking to see both snakes are still alive.
+        blue_positions = blue_snake.positions
+        run = blue_snake.update(green_snake.positions) and green_snake.update(blue_positions)
+        
+        #Checking to see if a snake ate an apple.
+        if blue_snake.get_head_position() == food.position:
+            blue_snake.length += 1
+            blue_snake.score += 1
             food.randomize_position()
-        elif snake_2.get_head_position() == food.position:
-            snake_2.length += 1
+        elif green_snake.get_head_position() == food.position:
+            green_snake.length += 1
+            green_snake.score += 1
             food.randomize_position()
-        surface.fill(BLACK)
-        snake_1.render(surface)
-        snake_2.render(surface)
-        food.render(surface)
-        screen.blit(surface, (0, 0))
-        pygame.display.update()
+            
+        #Checking to see if a snake ate the superfood.
+        if blue_snake.get_head_position() == superfood.position and superfood.is_hidden == False:
+            blue_snake.length += 5
+            blue_snake.score += 5
+            frame = 0
+            superfood.hide()    
+        elif green_snake.get_head_position() == superfood.position and superfood.is_hidden == False:
+            green_snake.length += 5
+            green_snake.score += 5
+            frame = 0
+            superfood.hide()
+            
+        #Creating a new superfood.
+        if frame%100 == 0 and superfood.is_hidden == True:
+            frame = 1
+            superfood.uncover()
+        
+        #Destroying the superfood if too much time has passed.
+        if frame%50 == 0 and superfood.is_hidden == False:
+            frame = 1
+            superfood.hide()
+        
+        #Rendering everything to the screen.
+        if run:
+            surface.fill(BLACK)
+            blue_snake.render(surface)
+            green_snake.render(surface)
+            food.render(surface)
+            superfood.render(surface)
+            screen.blit(surface, (0, 0))
+            pygame.display.update()
         clock.tick(FPS)
+    
+    #Adding up the final scores, a bonus is given if your snake stays alive.
+    if(blue_snake.is_alive):
+        blue_snake.score += 20
+    if(green_snake.is_alive):
+        green_snake.score += 20
+        
+    #Displaying the scores.
+    font = pygame.font.Font(None, 36)
+    # Create a text surface
+    blue_text = "The blue snakes score is: " + str(blue_snake.score)
+    blue_text_surface = font.render(blue_text, True, BLUE)
+    green_text = "The green snakes score is: " + str(green_snake.score)
+    green_text_surface = font.render(green_text, True, GREEN)
+
+    # Get the rectangle of the text surface
+    text_rect = blue_text_surface.get_rect(center=(WIDTH // 2, HEIGHT // 2))
+    text_rect2 = green_text_surface.get_rect(center=(WIDTH // 2, HEIGHT // 2 + 200))
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+        screen.blit(blue_text_surface, text_rect)
+        screen.blit(green_text_surface, text_rect2)
+        pygame.display.flip()
+        clock.tick(60)
 
 if __name__ == "__main__":
     main()
