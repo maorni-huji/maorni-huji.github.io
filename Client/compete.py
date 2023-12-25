@@ -1,6 +1,6 @@
-import time
 import tkinter as tk
 from tkinter import ttk, filedialog
+from pathlib import Path
 
 
 def browse_file(entry_var):
@@ -19,7 +19,27 @@ def run_game(opponent_script_path):
     :param opponent_script_path: The path to the opponent's script python file
     :return: None
     """
+    # this function can copy the given file's data and create the wanted opponent's file by itself,
+    # after the game it needs to remove the file it created to prevent collisions
     print(f"Running game with opponent's script: {opponent_script_path}")
+
+    opponent_data = ""
+    with open(opponent_script_path, "r") as opponent_script:
+        opponent_data = opponent_script.read()
+
+    current_directory = str(Path(__file__))
+    if "\\" in current_directory:
+        current_directory = current_directory[:current_directory.rindex("\\")]
+    elif "/" in current_directory:
+        current_directory = current_directory[:current_directory.rindex("/")]
+    else:
+        print("ERROR Reading the file path - call the Superiors")
+        return
+
+    with open(current_directory + "\\opponent_snake.py", "w") as opponent_file:
+        opponent_file.write(opponent_data)
+
+    print("Opponent file was created")
 
 
 def upload_opponent_file():
@@ -63,8 +83,9 @@ def upload_opponent_file():
 
     def on_run_game(opponent_script_path):
         # Destroy the GUI window before calling run_game
-        root.destroy()
-        run_game(opponent_script_path)
+        if opponent_script_path:
+            root.destroy()
+            run_game(opponent_script_path)
 
     root.mainloop()
 
