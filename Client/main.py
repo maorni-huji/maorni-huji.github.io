@@ -4,7 +4,8 @@ from pathlib import Path
 import snake_platform
 from colorama import Fore, Style
 import webbrowser
-
+import logging
+from datetime import datetime
 
 def browse_file(entry_var):
     """
@@ -45,6 +46,10 @@ def run_game(opponent_script_path, is_real):
         print(Fore.MAGENTA, f"Running game with opponent's script: {opponent_script_path}", Style.RESET_ALL,
               "\nThe host is the ", Fore.BLUE, "blue snake", Style.RESET_ALL,
               " and the guest is the ", Fore.GREEN, "green snake", Style.RESET_ALL, ".", sep="")
+
+        logging.basicConfig(filename="actions.log", filemode="a", format=" >> %(message)s", level=logging.INFO)
+        logging.info("<<<<<<<<<<<<< STARTING NEW SNAKES GAME :: " + datetime.now().strftime("%H:%M:%S") + " >>>>>>>>>>>>>>")
+        logging.info("Opponent Script Path: " + opponent_script_path)
 
         # read the opponent's script
         opponent_data = ""

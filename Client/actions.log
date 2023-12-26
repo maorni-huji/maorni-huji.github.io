@@ -1,0 +1,908 @@
+ >> <<<<<<<<<<<<< STARTING NEW SNAKES GAME :: 01:45:30 >>>>>>>>>>>>>>
+ >> Opponent Script Path: C:/Users/TLP-001/PycharmProjects/ShabatMadat/Client/default_snake.py
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (1, 0), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: Red, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (1, 0), Green Food: None, Green Score: 1
+ >> THE GAME IS DONE - Blue Snake Score: 20, Green Snake Score: 1
+
+
+ >> <<<<<<<<<<<<< STARTING NEW SNAKES GAME :: 01:45:59 >>>>>>>>>>>>>>
+ >> Opponent Script Path: C:/Users/TLP-001/PycharmProjects/ShabatMadat/Client/default_snake.py
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 0
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: Red, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 1
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: Red, Green Score: 2
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (1, 0), Green Food: None, Green Score: 2
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (1, 0), Green Food: None, Green Score: 2
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (1, 0), Green Food: None, Green Score: 2
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 2
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 2
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 2
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 2
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 2
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 2
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 2
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 2
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 2
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 2
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 2
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 2
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 2
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 2
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 2
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 2
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 2
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: Red, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 3
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: Red, Green Score: 4
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (1, 0), Green Food: None, Green Score: 4
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (1, 0), Green Food: None, Green Score: 4
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (1, 0), Green Food: None, Green Score: 4
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (1, 0), Green Food: None, Green Score: 4
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (1, 0), Green Food: None, Green Score: 4
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (1, 0), Green Food: None, Green Score: 4
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (1, 0), Green Food: None, Green Score: 4
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (1, 0), Green Food: None, Green Score: 4
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (1, 0), Green Food: None, Green Score: 4
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 4
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 4
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 4
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 4
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 4
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 4
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 4
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 4
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 4
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 4
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 4
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 4
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 4
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 4
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 4
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 4
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: Red, Green Score: 5
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 5
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 5
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 5
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 5
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 5
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 5
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 5
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 5
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 5
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 5
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 5
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 5
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 5
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 5
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 5
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 5
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 5
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 5
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 5
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 5
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 5
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 5
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 5
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 5
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 5
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 5
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 5
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 5
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 5
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 5
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 5
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 5
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: Red, Green Score: 6
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 6
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 6
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 6
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 6
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 6
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 6
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 6
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 6
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 6
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 6
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 6
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 6
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 6
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 6
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 6
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 6
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 6
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 6
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 6
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 6
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 6
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 6
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 6
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 6
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: Red, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (1, 0), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (1, 0), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (1, 0), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (1, 0), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (1, 0), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (1, 0), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (1, 0), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (1, 0), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (1, 0), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (1, 0), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (1, 0), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (1, 0), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (1, 0), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (1, 0), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (1, 0), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (1, 0), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (1, 0), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (1, 0), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (1, 0), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (1, 0), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (1, 0), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (1, 0), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: None, Green Score: 7
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 0
+    Green Direction: (0, 1), Green Food: Red, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (-1, 0), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 0
+    Green Direction: (0, -1), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: Red, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (-1, 0), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (-1, 0), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (-1, 0), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (-1, 0), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (-1, 0), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (-1, 0), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (-1, 0), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (-1, 0), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (-1, 0), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (-1, 0), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (-1, 0), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (-1, 0), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (-1, 0), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 8
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: Red, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (1, 0), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (1, 0), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (1, 0), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (1, 0), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (1, 0), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (1, 0), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (1, 0), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (1, 0), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (1, 0), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (1, 0), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (1, 0), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (1, 0), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (1, 0), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (1, 0), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (1, 0), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (1, 0), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (1, 0), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (1, 0), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (1, 0), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (1, 0), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 9
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: Red, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (-1, 0), Green Food: None, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (-1, 0), Green Food: None, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (-1, 0), Green Food: None, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (-1, 0), Green Food: None, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (-1, 0), Green Food: None, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (-1, 0), Green Food: None, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (-1, 0), Green Food: None, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (-1, 0), Green Food: None, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (-1, 0), Green Food: None, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (-1, 0), Green Food: None, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (-1, 0), Green Food: None, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (-1, 0), Green Food: None, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (-1, 0), Green Food: None, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (-1, 0), Green Food: None, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (-1, 0), Green Food: None, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (-1, 0), Green Food: None, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (-1, 0), Green Food: None, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (-1, 0), Green Food: None, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (-1, 0), Green Food: None, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: None, Green Score: 10
+ >> Blue Direction: (0, -1), Blue Food: None, Blue Score: 1
+    Green Direction: (0, 1), Green Food: Red, Green Score: 11
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (1, 0), Green Food: None, Green Score: 11
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (1, 0), Green Food: None, Green Score: 11
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (1, 0), Green Food: None, Green Score: 11
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (1, 0), Green Food: None, Green Score: 11
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (1, 0), Green Food: None, Green Score: 11
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 11
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 11
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 11
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 11
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 11
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 11
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 11
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 11
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 11
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 11
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 11
+ >> Blue Direction: (-1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 11
+ >> Blue Direction: (1, 0), Blue Food: None, Blue Score: 1
+    Green Direction: (0, -1), Green Food: None, Green Score: 11
+ >> THE GAME IS DONE - Blue Snake Score: 1, Green Snake Score: 31
+
+

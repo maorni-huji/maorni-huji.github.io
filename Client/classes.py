@@ -15,10 +15,13 @@ GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 
 # Direction vectors.
-UP = (0, -1)
-DOWN = (0, 1)
-LEFT = (-1, 0)
-RIGHT = (1, 0)
+UP = (0,-1)
+DOWN = (0,1)
+LEFT = (-1,0)
+RIGHT = (1,0)
+
+NO_APPLE, RED_APPLE, SUPERFOOD = 0, 1, 2
+APPLES = {NO_APPLE: "None", RED_APPLE: "Red", SUPERFOOD: "White"}
 
 
 # Snake class.

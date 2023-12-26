@@ -190,7 +190,8 @@ class Tournament:
 
     def fetch_winners(self, file_path=Competitor.DEFAULT_WINNERS, odd_player=None):
         """
-        Parses the names of the winning groups (from Google forms) into the class
+        Parses the names of the winning groups (from Google forms) into the class,
+        it just removes all of the participants who were not assigned as winners (and adds the losers to self.participants_out)
         :param file_path: The winner groups Excel file location
         :param odd_player: The player who didn't have competitor to compete against and automatically wins
         :return: A list of groups that were both assigned as winners or both losers (by mistake)

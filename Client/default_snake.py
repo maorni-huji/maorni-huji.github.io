@@ -2,15 +2,10 @@
 # This file's structure is similar to your_snake.py's structure, but it also includes the way the demo-snake should move
 
 import classes
-
+from classes import RIGHT, LEFT, UP, DOWN  # directions
 
 # Returns the direction vector your snake will move to. Output HAS TO BE one of UP, DOWN, LEFT, RIGHT.
 def think(food: classes.Food, superfood: classes.Superfood, this_snake: classes.Snake, other_snake: classes.Snake):
-    UP = (0,1)
-    DOWN = (0,-1)
-    LEFT = (-1,0)
-    RIGHT = (1,0)
-
     if this_snake.get_head_position()[0] < food.position[0] and this_snake.direction != LEFT:
         output = RIGHT
     elif this_snake.get_head_position()[0] > food.position[0] and this_snake.direction != RIGHT:
