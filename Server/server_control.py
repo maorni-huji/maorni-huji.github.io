@@ -96,23 +96,14 @@ def server_auto_control():
         odd_player = tournament.choose_pairs()
         google_form_competitors = tournament.publish_pairs(odd_player=odd_player, html_file_path=INDEX_HTML_PATH)
 
-        print(r" > Alright, now - copy the following competitors into the description of https://docs.google.com/forms/d/1bpUep3OJk6Lx0wG3vYGh91DKMyjE9XEtcPc_vk49U2k/edit," + "\n"
-              r"   So they would know who plays verses who")
+        print(r" > Alright, now - copy the following competitors into the description of https://docs.google.com/forms/d/1bpUep3OJk6Lx0wG3vYGh91DKMyjE9XEtcPc_vk49U2k/edit," + "\n",
+              r"   So they would know who plays verses who (published in https://forms.gle/49FchrWEK4fFDqqV6), and change the title's stage to ", Fore.BLUE, "Stage ", i, Style.RESET_ALL, sep="")
         print(google_form_competitors)
         wait()
-
-        #print("  > Alright, now - copy the file index.html to InfinityFree (https://dash.infinityfree.com/accounts) > File Manager,\n"
-        #      "    and then tell them that the link https://maornimri45.infinityfreeapp.com/ is updated")
-        #wait()
-
-        # print(r"  > Alright, now - publishing the competitors! Some GitHub uploads would run automatically")
-        # tournament.publish_pairs(odd_player=odd_player, html_file_path=INDEX_HTML_PATH,
-        #                          upload_to_github=True, game_token=game_token, stage_num=i)
-        # print(r"  > Send everyone to refresh the link https://maorni-huji.github.io/ so they can see who they are playing against")
-        # wait()
+        print(r"  > Alright, now they can use the forms https://forms.gle/49FchrWEK4fFDqqV6 to say who wins")
 
         # fetch winners
-        print(r"  > Now, when the players have finished playing:" + "\n"
+        print(r"  > When the players have finished playing:" + "\n"
               r"  > Enter the table https://docs.google.com/spreadsheets/d/1IyzT8g9rnnWTDLsSvEwOAX9BEZAHkCDNzbdMkDwWO9s/edit?resourcekey#gid=1329863517," + "\n"
               r"    and copy its values to C:\Users\TLP-001\PycharmProjects\ShabatMadat\Server\winners.xlsx")
         wait()
@@ -133,6 +124,15 @@ def server_auto_control():
 
     print("Congratulations! The winner is", the_winner.group_name)
 
+#print("  > Alright, now - copy the file index.html to InfinityFree (https://dash.infinityfree.com/accounts) > File Manager,\n"
+        #      "    and then tell them that the link https://maornimri45.infinityfreeapp.com/ is updated")
+        #wait()
+
+        # print(r"  > Alright, now - publishing the competitors! Some GitHub uploads would run automatically")
+        # tournament.publish_pairs(odd_player=odd_player, html_file_path=INDEX_HTML_PATH,
+        #                          upload_to_github=True, game_token=game_token, stage_num=i)
+        # print(r"  > Send everyone to refresh the link https://maorni-huji.github.io/ so they can see who they are playing against")
+        # wait()
 
 def wait(continue_letter: str = 'Y'):
     """

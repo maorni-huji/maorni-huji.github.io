@@ -134,7 +134,7 @@ class Tournament:
         <td>""" + pair[0].group_name + """</td>
         <td>""" + pair[1].group_name + """</td>
     </tr>"""
-            google_form_view += str(i) + ".  " + pair[0].group_name + " --- VS ---" + pair[1].group_name + "\n"
+            google_form_view += str(i) + ".  " + pair[0].group_name + " --- VS --- " + pair[1].group_name + "\n"
             i += 1
 
         if odd_player:
