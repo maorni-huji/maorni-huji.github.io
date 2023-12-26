@@ -1,42 +1,58 @@
-#The actual snake game that utilises the brains provided by the two players.
+# The actual snake game that utilises the brains provided by the two players.
 import pygame
 import sys
 import random
-import default_snake
 import classes
+import your_snake
 
-#Initialize Pygame.
+# Initialize Pygame.
 pygame.init()
 
-#Constants.
+# Constants.
 WIDTH, HEIGHT = 600, 600
 GRID_SIZE = 20
 SNAKE_SIZE = 20
 FPS = 10
 
-#Colors.
+# Colors.
 WHITE = (255, 255, 255)
-BLACK = (0,0,0)
+BLACK = (0, 0, 0)
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 
-def main():
-    #Initializing all the objects required for pygame.
+HOST_WINS, OPPONENT_WINS = 0, 1
+
+
+def run_snakes_game(is_real: bool = False):
+    """
+    Runs the Snake Game
+    :param is_real: True for real competitors, False for trainings - using the default_snake file
+    :return: None
+    """
+    your_think = your_snake.think  # your function!
+    if is_real:
+        import opponent_snake  # real opponent snake - do not touch!
+        opponent_think = opponent_snake.think
+    else:
+        import default_snake  # demo snake for training, you are allowed to edit default_snake.py for demonstrating possible opponents!
+        opponent_think = default_snake.think
+
+    # Initializing all the objects required for pygame.
     clock = pygame.time.Clock()
     screen = pygame.display.set_mode((WIDTH, HEIGHT), 0, 32)
     surface = pygame.Surface(screen.get_size())
     surface = surface.convert()
     frame = 1
 
-    #Initializing the game objects.
-    blue_snake = classes.Snake((60,60), BLUE)
+    # Initializing the game objects.
+    blue_snake = classes.Snake((60,60), BLUE)  # the host is the blue Snake, the opponent is the Green one
     green_snake = classes.Snake((540,540), GREEN)
     food = classes.Food()
     superfood = classes.Superfood()
     run = True
     
-    #Running the game.
+    # Running the game.
     while run:
         frame += 1
         for event in pygame.event.get():
@@ -44,15 +60,15 @@ def main():
                 pygame.quit()
                 sys.exit()
                 
-        #Replace "default_snake" with your own snake bot file, remember to also import your file at the top of this file!
-        blue_snake.direction = default_snake.think(food, superfood, blue_snake, green_snake)
-        green_snake.direction = default_snake.think(food, superfood, green_snake, blue_snake)
+        # Replace "default_snake" with your own snake bot file, remember to also import your file at the top of this file!
+        blue_snake.direction = your_think(food, superfood, blue_snake, green_snake)
+        green_snake.direction = opponent_think(food, superfood, green_snake, blue_snake)
 
-        #Checking to see both snakes are still alive.
+        # Checking to see both snakes are still alive.
         blue_positions = blue_snake.positions
         run = blue_snake.update(green_snake.positions) and green_snake.update(blue_positions)
         
-        #Checking to see if a snake ate an apple.
+        # Checking to see if a snake ate an apple.
         if blue_snake.get_head_position() == food.position:
             blue_snake.length += 1
             blue_snake.score += 1
@@ -62,7 +78,7 @@ def main():
             green_snake.score += 1
             food.randomize_position()
             
-        #Checking to see if a snake ate the superfood.
+        # Checking to see if a snake ate the superfood.
         if blue_snake.get_head_position() == superfood.position and superfood.is_hidden == False:
             blue_snake.length += 5
             blue_snake.score += 5
@@ -74,17 +90,17 @@ def main():
             frame = 0
             superfood.hide()
             
-        #Creating a new superfood.
+        # Creating a new superfood.
         if frame%100 == 0 and superfood.is_hidden == True:
             frame = 1
             superfood.uncover()
         
-        #Destroying the superfood if too much time has passed.
+        # Destroying the superfood if too much time has passed.
         if frame%50 == 0 and superfood.is_hidden == False:
             frame = 1
             superfood.hide()
         
-        #Rendering everything to the screen.
+        # Rendering everything to the screen.
         if run:
             surface.fill(BLACK)
             blue_snake.render(surface)
@@ -95,13 +111,13 @@ def main():
             pygame.display.update()
         clock.tick(FPS)
     
-    #Adding up the final scores, a bonus is given if your snake stays alive.
+    # Adding up the final scores, a bonus is given if your snake stays alive.
     if(blue_snake.is_alive):
         blue_snake.score += 20
     if(green_snake.is_alive):
         green_snake.score += 20
         
-    #Displaying the scores.
+    # Displaying the scores.
     font = pygame.font.Font(None, 36)
     # Create a text surface
     blue_text = "The blue snakes score is: " + str(blue_snake.score)
@@ -122,5 +138,5 @@ def main():
         pygame.display.flip()
         clock.tick(60)
 
-if __name__ == "__main__":
-    main()
+        return HOST_WINS if blue_snake.score > green_snake.score else OPPONENT_WINS
+

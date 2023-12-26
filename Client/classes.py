@@ -7,7 +7,7 @@ GRID_SIZE = 20
 SNAKE_SIZE = 20
 FPS = 10
 
-#Colors.
+# Colors.
 WHITE = (255, 255, 255)
 BLACK = (0,0,0)
 RED = (255, 0, 0)
@@ -15,13 +15,13 @@ GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 
 
-#Direction vectors.
+# Direction vectors.
 UP = (0, -1)
 DOWN = (0, 1)
 LEFT = (-1, 0)
 RIGHT = (1, 0)
 
-#Snake class.
+# Snake class.
 class Snake:
     def __init__(self, starting_pos : tuple, color : tuple, ):
         self.length = 1
@@ -60,7 +60,8 @@ class Snake:
     def get_score(self):
         return self.score
 
-#Food class.
+
+# Food class.
 class Food:
     def __init__(self):
         self.position = (0, 0)
@@ -74,7 +75,8 @@ class Food:
     def render(self, surface):
         pygame.draw.rect(surface, self.color, (self.position[0], self.position[1], SNAKE_SIZE, SNAKE_SIZE))
 
-#Superfood class.
+
+# Superfood class.
 class Superfood():
     def __init__(self):
         self.position = (0,0)

@@ -6,5 +6,10 @@ def think(food : classes.Food, superfood: classes.Superfood, this_snake : classe
     DOWN = (0,-1)
     LEFT = (-1,0)
     RIGHT = (1,0)
-    output = (0,0)
+
+    if other_snake.length % 2 == 0:  # just an example of a stupid snake, edit your own code!
+        output = LEFT
+    else:
+        output = DOWN
+
     return output
