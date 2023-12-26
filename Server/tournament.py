@@ -194,10 +194,10 @@ class Tournament:
         for winner in content["איזה זוג ניצח מביניכם?"].values():
             if isinstance(winner, str):
                 win_player = self.find_competitor(group_name=winner)
-                if win_player is not None:
+                if win_player:
                     win_player.won = True
-                elif odd_player.group_name != winner:
-                    raise Exception("Competitor group '" + winner + "' was not found in the participants list")
+                elif not odd_player or odd_player.group_name != winner:
+                    print("Competitor group '" + winner + "' was not found in the participants list, SHOULDN'T HAPPEN")
 
         for p1, p2 in self.compete_in:
             if (p1.won and not p2.won) or (not p1.won and p2.won):

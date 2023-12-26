@@ -3,7 +3,7 @@ from colorama import Fore, Style
 from random import randint
 import os
 
-INDEX_HTML_PATH = r"C:\Users\TLP-001\PycharmProjects\ShabatMadat\index.html"
+INDEX_HTML_PATH = r"index.html"
 
 
 def server_control():

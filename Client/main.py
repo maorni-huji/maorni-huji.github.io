@@ -68,7 +68,7 @@ def run_game(opponent_script_path, is_real):
             print(Fore.GREEN, "The Green Snake (The Guest's Code) Wins!", Style.RESET_ALL, sep="")
 
 
-def upload_opponent_file():
+def main():
     """
     Runs the GUI that asks the user to enter his / her opponent's script,
     this function should be called first - and it calls the other functions that run the game
@@ -131,4 +131,4 @@ def upload_opponent_file():
 
 
 if "__main__" == __name__:
-    upload_opponent_file()
+    main()
