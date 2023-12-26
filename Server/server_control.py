@@ -94,11 +94,16 @@ def server_auto_control():
         wait()
 
         odd_player = tournament.choose_pairs()
-        tournament.publish_pairs(odd_player=odd_player, html_file_path=INDEX_HTML_PATH)
+        google_form_competitors = tournament.publish_pairs(odd_player=odd_player, html_file_path=INDEX_HTML_PATH)
 
-        print("  > Alright, now - copy the file index.html to InfinityFree (https://dash.infinityfree.com/accounts) > File Manager,\n"
-              "    and then tell them that the link https://maornimri45.infinityfreeapp.com/ is updated")
+        print(r" > Alright, now - copy the following competitors into the description of https://docs.google.com/forms/d/1bpUep3OJk6Lx0wG3vYGh91DKMyjE9XEtcPc_vk49U2k/edit," + "\n"
+              r"   So they would know who plays verses who")
+        print(google_form_competitors)
         wait()
+
+        #print("  > Alright, now - copy the file index.html to InfinityFree (https://dash.infinityfree.com/accounts) > File Manager,\n"
+        #      "    and then tell them that the link https://maornimri45.infinityfreeapp.com/ is updated")
+        #wait()
 
         # print(r"  > Alright, now - publishing the competitors! Some GitHub uploads would run automatically")
         # tournament.publish_pairs(odd_player=odd_player, html_file_path=INDEX_HTML_PATH,

@@ -13,7 +13,6 @@ WIDTH, HEIGHT = 600, 600
 GRID_SIZE = 20
 SNAKE_SIZE = 20
 FPS = 10
-
 # Colors.
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
@@ -44,6 +43,7 @@ def run_snakes_game(is_real: bool = False):
     surface = pygame.Surface(screen.get_size())
     surface = surface.convert()
     frame = 1
+    tick = 0
 
     # Initializing the game objects.
     blue_snake = classes.Snake((60,60), BLUE)  # the host is the blue Snake, the opponent is the Green one
@@ -53,7 +53,8 @@ def run_snakes_game(is_real: bool = False):
     run = True
     
     # Running the game.
-    while run:
+    while run and (tick < 900 or blue_snake.score == green_snake.score):
+        tick += 1
         frame += 1
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -61,8 +62,8 @@ def run_snakes_game(is_real: bool = False):
                 sys.exit()
                 
         # Replace "default_snake" with your own snake bot file, remember to also import your file at the top of this file!
-        blue_snake.direction = your_think(food, superfood, blue_snake, green_snake)
-        green_snake.direction = opponent_think(food, superfood, green_snake, blue_snake)
+        blue_snake.direction = your_think(food.copy(), superfood.copy(), blue_snake.copy(), green_snake.copy())
+        green_snake.direction = opponent_think(food.copy(), superfood.copy(), green_snake.copy(), blue_snake.copy())
 
         # Checking to see both snakes are still alive.
         blue_positions = blue_snake.positions
@@ -128,15 +129,17 @@ def run_snakes_game(is_real: bool = False):
     # Get the rectangle of the text surface
     text_rect = blue_text_surface.get_rect(center=(WIDTH // 2, HEIGHT // 2))
     text_rect2 = green_text_surface.get_rect(center=(WIDTH // 2, HEIGHT // 2 + 200))
-    while True:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                sys.exit()
+    run = True
+    while run:
         screen.blit(blue_text_surface, text_rect)
         screen.blit(green_text_surface, text_rect2)
         pygame.display.flip()
         clock.tick(60)
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                run = False
+                break
 
-        return HOST_WINS if blue_snake.score > green_snake.score else OPPONENT_WINS
+    return HOST_WINS if blue_snake.score > green_snake.score else OPPONENT_WINS
 

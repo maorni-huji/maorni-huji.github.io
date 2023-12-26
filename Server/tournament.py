@@ -125,13 +125,17 @@ class Tournament:
         <th>קבוצה א'</th>
         <th>קבוצה ב'</th>
     </tr>"""
+        google_form_view = ""
 
+        i = 1
         for pair in self.compete_in:
             table_html += """
     <tr>
         <td>""" + pair[0].group_name + """</td>
         <td>""" + pair[1].group_name + """</td>
     </tr>"""
+            google_form_view += str(i) + ".  " + pair[0].group_name + " --- VS ---" + pair[1].group_name + "\n"
+            i += 1
 
         if odd_player:
             table_html += """
@@ -139,6 +143,7 @@ class Tournament:
         <td>""" + odd_player.group_name + """</td>
         <td>אוטומטית עולה לסיבוב הבא (מזליסטים)</td>
     </tr>"""
+            google_form_view += str(i) + ".  " + odd_player.group_name + "  --- VS --- עולה אוטמטית לסיבוב הבא (מזליסטים), אין צורך שתמלאו את הפורם הסיבוב" + "\n"
 
         table_html += "\n</table>"
 
@@ -155,6 +160,8 @@ class Tournament:
         # upload the site to GitHub
         # if upload_to_github:
         #     Tournament.upload_site_to_github(game_token, stage_num)
+
+        return google_form_view
 
     @staticmethod
     def upload_site_to_github(game_token: str, stage_num: int):

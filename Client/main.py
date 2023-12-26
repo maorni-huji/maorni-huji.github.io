@@ -3,6 +3,7 @@ from tkinter import ttk, filedialog
 from pathlib import Path
 import snake_platform
 from colorama import Fore, Style
+import webbrowser
 
 
 def browse_file(entry_var):
@@ -13,6 +14,10 @@ def browse_file(entry_var):
     """
     file_path = filedialog.askopenfilename(filetypes=[("Python files", "*.py"), ("All files", "*.*")])
     entry_var.set(file_path)
+
+
+def open_in_google(url):
+    webbrowser.open_new(url)
 
 
 def run_game(opponent_script_path, is_real):
@@ -79,47 +84,56 @@ def main():
 
     # Styling with dark green background and white text
     root.configure(bg="#006400")  # Dark green background
-    root.geometry("635x300")  # Set window size
+    root.geometry("540x430")  # Set window size
 
     main_frame = ttk.Frame(root, padding=(20, 10), style="Main.TFrame")
     main_frame.grid(row=0, column=0)
 
     # heading
-    title = ttk.Label(main_frame, text="The Snake Game", font=('Helvetica', 18), style="Title.TLabel")
-    title.grid(row=0, column=0, pady=10, columnspan=2, sticky="w")
+    title = ttk.Label(main_frame, text="The Snake Game", font=('Helvetica', 18), style="Title1.TLabel")
+    title.grid(row=0, column=0, pady=10, columnspan=2)
 
     # demo game
     label1 = ttk.Label(main_frame, text="Run Training Game Against default_snake.py:", font=('Helvetica', 14), style="Title.TLabel")
-    label1.grid(row=1, column=0, pady=10, sticky="w")
+    label1.grid(row=1, column=0, pady=10, columnspan=2)
 
     run_button_style = "DemoButton.TButton"
     run_button = ttk.Button(main_frame, text="Run Demo Game", command=lambda: on_run_game(entry_var.get(), is_real=False), style=run_button_style)
-    run_button.grid(row=1, column=1, pady=20, columnspan=2, sticky="e")
+    run_button.grid(row=2, column=0, pady=20, columnspan=2)
 
     # real game
-    label = ttk.Label(main_frame, text="To Start The Real Game, Select Opponent's Script:", font=('Helvetica', 14), style="Title.TLabel")
-    label.grid(row=3, column=0, pady=10, sticky="w")
+    label = ttk.Label(main_frame, text="To Start The Real Game, Upload Your Opponent's Script:", font=('Helvetica', 14), style="Title.TLabel")
+    label.grid(row=3, column=0, pady=10, columnspan=1)
 
     entry_var = tk.StringVar()
     entry = ttk.Entry(main_frame, textvariable=entry_var, width=40, font=('Helvetica', 12), style="Entry.TEntry")
-    entry.grid(row=4, column=0, pady=20, columnspan=2, sticky="w")
+    entry.grid(row=5, column=0, pady=20, columnspan=2)
+
+    run_button_style = "Competitors.TButton"
+    competitors_link = ttk.Button(root, text="But Who is My Opponent?", cursor="hand2",
+                                  command=lambda url="https://forms.gle/49FchrWEK4fFDqqV6": open_in_google(url),
+                                  style=run_button_style)
+    competitors_link.grid(row=4, column=0, pady=10, columnspan=2)
 
     browse_button_style = "BrowseButton.TButton"
     browse_button = ttk.Button(main_frame, text="Browse", command=lambda: browse_file(entry_var), style=browse_button_style)
-    browse_button.grid(row=4, column=0, pady=10, padx=10, sticky="e")
+    browse_button.grid(row=5, column=0, pady=10, padx=10, sticky="e")
 
     run_button_style = "RunButton.TButton"
     run_button = ttk.Button(main_frame, text="Run Game", command=lambda: on_run_game(entry_var.get(), is_real=True), style=run_button_style)
-    run_button.grid(row=4, column=1, pady=20, columnspan=2)
+    run_button.grid(row=6, column=0, pady=10, columnspan=2)
+
 
     # Style configurations
     root.style = ttk.Style()
-    root.style.configure("Main.TFrame", background="#006400", foreground="white")  # Dark green background, white text
+    root.style.configure("Main.TFrame", background="#006400", foreground="yellow")  # Dark green background, white text
     root.style.configure("Title.TLabel", background="#006400", foreground="white")
+    root.style.configure("Title1.TLabel", background="#006400", foreground="yellow")
     root.style.configure("Entry.TEntry", background="white", foreground="black")
     root.style.configure("DemoButton.TButton", padding=(10, 5), font=('Helvetica', 12), background="black", foreground="black")
     root.style.configure("BrowseButton.TButton", padding=(10, 5), font=('Helvetica', 12), background="#8B0000", foreground="red")  # Dark red
     root.style.configure("RunButton.TButton", padding=(10, 5), font=('Helvetica', 12), background="#8B0000", foreground="red")  # Dark red
+    root.style.configure("Competitors.TButton", padding=(10, 5), font=('Helvetica', 12), background="purple", foreground="purple")  # Dark red
 
     def on_run_game(opponent_script_path, is_real):
         # Destroy the GUI window before calling run_game
