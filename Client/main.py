@@ -6,6 +6,14 @@ from colorama import Fore, Style
 import webbrowser
 import logging
 from datetime import datetime
+import hashlib
+from os.path import isfile
+
+# TODO:
+# 1. Change the hash to the updated snake_platform.py hash
+# 2. Set the maximum amount of "time" to 90 * FPS (instead of 900)
+# 3. When the game ends, tell which snake wins - INCLUDING whether it is the HOST or the OPPONENT
+
 
 def browse_file(entry_var):
     """
@@ -47,14 +55,15 @@ def run_game(opponent_script_path, is_real):
               "\nThe host is the ", Fore.BLUE, "blue snake", Style.RESET_ALL,
               " and the guest is the ", Fore.GREEN, "green snake", Style.RESET_ALL, ".", sep="")
 
-        logging.basicConfig(filename="actions.log", filemode="a", format=" >> %(message)s", level=logging.INFO)
-        logging.info("<<<<<<<<<<<<< STARTING NEW SNAKES GAME :: " + datetime.now().strftime("%H:%M:%S") + " >>>>>>>>>>>>>>")
-        logging.info("Opponent Script Path: " + opponent_script_path)
-
         # read the opponent's script
         opponent_data = ""
         with open(opponent_script_path, "r") as opponent_script:
             opponent_data = opponent_script.read()
+
+        logging.basicConfig(filename="actions.log", filemode="a", format=" >> %(message)s", level=logging.INFO)
+        logging.info(
+            "<<<<<<<<<<<<< STARTING NEW SNAKES GAME :: " + datetime.now().strftime("%H:%M:%S") + " >>>>>>>>>>>>>>")
+        logging.info("Opponent Script Path: " + opponent_script_path)
 
         # upload the opponent's script
         current_directory = str(Path(__file__))
@@ -63,8 +72,7 @@ def run_game(opponent_script_path, is_real):
         elif "/" in current_directory:
             current_directory = current_directory[:current_directory.rindex("/")]
         else:
-            print("ERROR Reading the file path - call the Superiors")
-            return
+            raise Exception("ERROR Reading the file path - call the Superiors")
 
         with open(current_directory + "\\opponent_snake.py", "w") as opponent_file:
             opponent_file.write(opponent_data)
@@ -89,7 +97,7 @@ def main():
 
     # Styling with dark green background and white text
     root.configure(bg="#006400")  # Dark green background
-    root.geometry("540x430")  # Set window size
+    root.geometry("534x510")  # Set window size
 
     main_frame = ttk.Frame(root, padding=(20, 10), style="Main.TFrame")
     main_frame.grid(row=0, column=0)
@@ -98,42 +106,54 @@ def main():
     title = ttk.Label(main_frame, text="The Snake Game", font=('Helvetica', 18), style="Title1.TLabel")
     title.grid(row=0, column=0, pady=10, columnspan=2)
 
+    title2 = ttk.Label(main_frame, text="Blue (Host) VS Green (Opponent)", font=('Helvetica', 16), style="Title2.TLabel")
+    title2.grid(row=1, column=0, pady=10, columnspan=2)
+
     # demo game
     label1 = ttk.Label(main_frame, text="Run Training Game Against default_snake.py:", font=('Helvetica', 14), style="Title.TLabel")
-    label1.grid(row=1, column=0, pady=10, columnspan=2)
+    label1.grid(row=2, column=0, pady=10, columnspan=2)
 
     run_button_style = "DemoButton.TButton"
     run_button = ttk.Button(main_frame, text="Run Demo Game", command=lambda: on_run_game(entry_var.get(), is_real=False), style=run_button_style)
-    run_button.grid(row=2, column=0, pady=20, columnspan=2)
+    run_button.grid(row=3, column=0, pady=20, columnspan=2)
 
     # real game
     label = ttk.Label(main_frame, text="To Start The Real Game, Upload Your Opponent's Script:", font=('Helvetica', 14), style="Title.TLabel")
-    label.grid(row=3, column=0, pady=10, columnspan=1)
+    label.grid(row=4, column=0, pady=10, columnspan=1)
 
     entry_var = tk.StringVar()
     entry = ttk.Entry(main_frame, textvariable=entry_var, width=40, font=('Helvetica', 12), style="Entry.TEntry")
-    entry.grid(row=5, column=0, pady=20, columnspan=2)
+    entry.grid(row=6, column=0, pady=20, columnspan=2)
 
     run_button_style = "Competitors.TButton"
     competitors_link = ttk.Button(root, text="But Who is My Opponent?", cursor="hand2",
                                   command=lambda url="https://forms.gle/49FchrWEK4fFDqqV6": open_in_google(url),
                                   style=run_button_style)
-    competitors_link.grid(row=4, column=0, pady=10, columnspan=2)
+    competitors_link.grid(row=5, column=0, pady=10, columnspan=2)
 
     browse_button_style = "BrowseButton.TButton"
     browse_button = ttk.Button(main_frame, text="Browse", command=lambda: browse_file(entry_var), style=browse_button_style)
-    browse_button.grid(row=5, column=0, pady=10, padx=10, sticky="e")
+    browse_button.grid(row=6, column=0, pady=10, padx=10, sticky="e")
 
     run_button_style = "RunButton.TButton"
     run_button = ttk.Button(main_frame, text="Run Game", command=lambda: on_run_game(entry_var.get(), is_real=True), style=run_button_style)
-    run_button.grid(row=6, column=0, pady=10, columnspan=2)
+    run_button.grid(row=7, column=0, pady=10, columnspan=2)
 
+    # choose FPS
+    selected = tk.StringVar(root)
+    selected.set("10 FPS")  # Set the default option
+
+    # Create an OptionMenu widget
+    options_list = ["5 FPS", "10 FPS", "20 FPS", "30 FPS", "50 FPS"]
+    option_menu = tk.OptionMenu(root, selected, *options_list, command=None)
+    option_menu.grid(row=7, column=0, pady=10, columnspan=2, sticky="e")
 
     # Style configurations
     root.style = ttk.Style()
     root.style.configure("Main.TFrame", background="#006400", foreground="yellow")  # Dark green background, white text
     root.style.configure("Title.TLabel", background="#006400", foreground="white")
     root.style.configure("Title1.TLabel", background="#006400", foreground="yellow")
+    root.style.configure("Title2.TLabel", background="#006400", foreground="lightblue")
     root.style.configure("Entry.TEntry", background="white", foreground="black")
     root.style.configure("DemoButton.TButton", padding=(10, 5), font=('Helvetica', 12), background="black", foreground="black")
     root.style.configure("BrowseButton.TButton", padding=(10, 5), font=('Helvetica', 12), background="#8B0000", foreground="red")  # Dark red
@@ -141,12 +161,38 @@ def main():
     root.style.configure("Competitors.TButton", padding=(10, 5), font=('Helvetica', 12), background="purple", foreground="purple")  # Dark red
 
     def on_run_game(opponent_script_path, is_real):
+        # make sure that the snake_platform file wasn't changed
+        with open("snake_platform.py", "r") as snake_platform_file:
+            if sha256_hash(snake_platform_file.read().encode()) != '671d0d7a76b533c9e3be4e23683b066d52b60aac4ee7b8ed8cc2aa7b9a36d3bb':  # CHANGE THIS
+                if not is_real:
+                    label1.config(text="Oops!\nIt seems like snake_platform.py was accidentally edited.\nTry to re-download the file from GitHub", foreground="#ff6666")
+                else:
+                    label.config(text="Oops!\nIt seems like snake_platform.py was accidentally edited.\nTry to re-download the file from GitHub", foreground="#ff6666")
+                return
+
+        if is_real and not isfile(opponent_script_path):
+            label.config(text="Couldn't find the file specified, try to upload the correct file", foreground="#ff6666")
+
         # Destroy the GUI window before calling run_game
-        if not (is_real and not opponent_script_path):
+        else:
+            snake_platform.FPS = int(selected.get().split()[0])  # game FPS
             root.destroy()
             run_game(opponent_script_path, is_real)
 
     root.mainloop()
+
+
+def sha256_hash(data):
+    # Create a new SHA-256 hash object
+    sha256 = hashlib.sha256()
+
+    # Update the hash object with the bytes-like object (e.g., a string or bytes)
+    sha256.update(data)
+
+    # Get the hexadecimal representation of the hash
+    hashed_data = sha256.hexdigest()
+
+    return hashed_data
 
 
 if "__main__" == __name__:
