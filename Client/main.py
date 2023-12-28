@@ -13,6 +13,7 @@ from os.path import isfile
 # 1. Change the hash to the updated snake_platform.py hash
 # 2. Set the maximum amount of "time" to 90 * FPS (instead of 900)
 # 3. When the game ends, tell which snake wins - INCLUDING whether it is the HOST or the OPPONENT
+# 4. At the end of a real game, open a new gui window containing the link to the who-won-the-game forms
 
 
 def browse_file(entry_var):
