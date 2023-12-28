@@ -3,9 +3,10 @@
 
 import classes
 from classes import RIGHT, LEFT, UP, DOWN  # directions
+import time
 
 # Returns the direction vector your snake will move to. Output HAS TO BE one of UP, DOWN, LEFT, RIGHT.
-def think(food: classes.Food, superfood: classes.Superfood, this_snake: classes.Snake, other_snake: classes.Snake):
+def think(food : classes.Food, superfood: classes.Superfood, this_snake : classes.Snake, other_snake: classes.Snake):
     if this_snake.get_head_position()[0] < food.position[0] and this_snake.direction != LEFT:
         output = RIGHT
     elif this_snake.get_head_position()[0] > food.position[0] and this_snake.direction != RIGHT:
@@ -17,3 +18,4 @@ def think(food: classes.Food, superfood: classes.Superfood, this_snake: classes.
     else:
         output = this_snake.direction
     return output
+

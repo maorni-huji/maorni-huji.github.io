@@ -6,7 +6,7 @@ import classes
 from classes import RIGHT, LEFT, UP, DOWN
 import your_snake
 import logging
-
+import time
 # TODO:
 # 0. Can someone eat just one apple and kill himself, and this way to win the game? Is it ok for us?
 # 1. Validate return values of the 'think' functions
@@ -59,7 +59,7 @@ def run_snakes_game(is_real: bool = False):
     screen = pygame.display.set_mode((WIDTH, HEIGHT), 0, 32)
     surface = pygame.Surface(screen.get_size())
     surface = surface.convert()
-    frame = 1
+    superfood_timer = 1
     tick = 0
 
     # Initializing the game objects.
@@ -72,18 +72,38 @@ def run_snakes_game(is_real: bool = False):
     # Running the game.
     while run and (tick < 900 or blue_snake.score == green_snake.score):
         tick += 1
-        frame += 1
+        superfood_timer += 1
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
         blue_food = green_food = classes.NO_APPLE
-                
-        # Replace "default_snake" with your own snake bot file, remember to also import your file at the top of this file!
-        blue_snake.direction = your_think(food.copy(), superfood.copy(), blue_snake.copy(), green_snake.copy())
-        green_snake.direction = opponent_think(food.copy(), superfood.copy(), green_snake.copy(), blue_snake.copy())
-        # validate return value
-
+        
+        #Letting the snakes make their next move.
+        try:
+            start = time.time()
+            direction = your_think(food.copy(), superfood.copy(), blue_snake.copy(), green_snake.copy())
+            end = time.time()
+            if (end - start >= 0.2):
+                print("Took you long enough... MINUS A POINT TO GRIFFINDOR (a.k.a your snake)")
+                blue_snake.score-=1
+            else:
+                blue_snake.direction = direction
+        except Exception as e:
+            print(f"Function raised an exception: {e}")
+            
+        try:
+            start = time.time()
+            direction = opponent_think(food.copy(), superfood.copy(), green_snake.copy(), blue_snake.copy())
+            end = time.time()
+            if end - start >= 0.2:
+                print("Took you long enough... MINUS A POINT TO GRIFFINDOR (a.k.a your snake)")
+                blue_snake.score-=1
+            else:
+                green_snake.direction = direction
+        except Exception as e:
+            print(f"Function raised an exception: {e}")
+            
         # Checking to see both snakes are still alive.
         blue_positions = blue_snake.positions
         run = blue_snake.update(green_snake.positions) and green_snake.update(blue_positions)
@@ -105,24 +125,24 @@ def run_snakes_game(is_real: bool = False):
         if blue_snake.get_head_position() == superfood.position and superfood.is_hidden == False:
             blue_snake.length += 5
             blue_snake.score += 5
-            frame = 0  # rename this variable
+            superfood_timer = 0 
             superfood.hide()
             blue_food = classes.SUPERFOOD
         elif green_snake.get_head_position() == superfood.position and superfood.is_hidden == False:
             green_snake.length += 5
             green_snake.score += 5
-            frame = 0
+            superfood_timer = 0
             superfood.hide()
             green_food = classes.SUPERFOOD
             
         # Creating a new superfood.
-        if frame%100 == 0 and superfood.is_hidden == True:
-            frame = 1
+        if superfood_timer%100 == 0 and superfood.is_hidden == True:
+            superfood_timer = 1
             superfood.uncover()
         
         # Destroying the superfood if too much time has passed.
-        if frame%50 == 0 and superfood.is_hidden == False:
-            frame = 1
+        if superfood_timer%50 == 0 and superfood.is_hidden == False:
+            superfood_timer = 1
             superfood.hide()
 
         # log the actions to actions.log

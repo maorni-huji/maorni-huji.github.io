@@ -1,6 +1,7 @@
 import pygame
 import sys
 import random
+from contextlib import contextmanager
 
 WIDTH, HEIGHT = 600, 600
 GRID_SIZE = 20
@@ -22,7 +23,6 @@ RIGHT = (1,0)
 
 NO_APPLE, RED_APPLE, SUPERFOOD = 0, 1, 2
 APPLES = {NO_APPLE: "None", RED_APPLE: "Red", SUPERFOOD: "White"}
-
 
 # Snake class.
 class Snake:
