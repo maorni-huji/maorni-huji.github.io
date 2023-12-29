@@ -107,9 +107,9 @@ def server_auto_control():
               r"  > Enter the table https://docs.google.com/spreadsheets/d/1IyzT8g9rnnWTDLsSvEwOAX9BEZAHkCDNzbdMkDwWO9s/edit?resourcekey#gid=1329863517," + "\n"
               r"    and copy its values to C:\Users\TLP-001\PycharmProjects\ShabatMadat\Server\winners.xlsx")
         wait()
-        mistaken_groups = tournament.fetch_winners(odd_player=odd_player)
+        mistaken_groups, is_wrong = tournament.fetch_winners(odd_player=odd_player)
 
-        if mistaken_groups:  # some groups were both assigned as losers or both assigned as winners (by a mistake)
+        while mistaken_groups or is_wrong:  # some groups were both assigned as losers or both assigned as winners (by a mistake)
             print(Fore.MAGENTA + "  > Some groups were not both assigned as winners or both as losers:")
             j = 1
             for mistaken_compete in mistaken_groups:
@@ -118,6 +118,7 @@ def server_auto_control():
             print("  > Find out what happens with them, and when you figure out who are the winners -\n"
                   r"    add their EXACT name to C:\Users\TLP-001\PycharmProjects\ShabatMadat\Server\winners.xlsx, or remove the loser's name" + Style.RESET_ALL)
             wait()
+            mistaken_groups, is_wrong = tournament.fetch_winners(odd_player=odd_player)
 
         i += 1
         the_winner = tournament.is_done()
