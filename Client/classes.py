@@ -19,6 +19,8 @@ DOWN = (0,1)
 LEFT = (-1,0)
 RIGHT = (1,0)
 
+ALLOWED_DIRECTIONS = [UP, DOWN, LEFT, RIGHT, (1,1), (1,-1), (-1,1), (-1,-1)]
+
 NO_APPLE, RED_APPLE, SUPERFOOD = 0, 1, 2
 APPLES = {NO_APPLE: "None", RED_APPLE: "Red", SUPERFOOD: "White"}
 
