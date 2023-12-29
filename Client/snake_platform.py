@@ -203,8 +203,7 @@ def run_snakes_game(is_real: bool = False):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
-                run = False
-                break
+                return HOST_WINS if blue_snake.score > green_snake.score else OPPONENT_WINS
 
     return HOST_WINS if blue_snake.score > green_snake.score else OPPONENT_WINS
 
