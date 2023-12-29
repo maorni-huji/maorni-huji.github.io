@@ -11,5 +11,5 @@ Returns the direction the snake will be facing.
 
 
 def think(food : classes.Food, superfood: classes.Superfood, this_snake : classes.Snake, other_snake: classes.Snake):
-    output = (0,3)
+    output = UP
     return output
