@@ -1,7 +1,5 @@
 import pygame
-import sys
 import random
-from contextlib import contextmanager
 
 WIDTH, HEIGHT = 600, 600
 GRID_SIZE = 20
@@ -23,6 +21,7 @@ RIGHT = (1,0)
 
 NO_APPLE, RED_APPLE, SUPERFOOD = 0, 1, 2
 APPLES = {NO_APPLE: "None", RED_APPLE: "Red", SUPERFOOD: "White"}
+
 
 # Snake class.
 class Snake:
@@ -58,11 +57,17 @@ class Snake:
                 self.positions.pop()
             return True
 
+    def update_just_positions(self, other_snake_pos: [tuple]):
+        cur = self.get_head_position()
+        x, y = self.direction
+        new = (((cur[0] + (x * GRID_SIZE)) % WIDTH), (cur[1] + (y * GRID_SIZE)) % HEIGHT)
+        self.positions.insert(0, new)
+        if len(self.positions) > self.length:
+            self.positions.pop()
+        return True
+
     def reset(self):
         self.is_alive = False
-        self.length = 1
-        self.positions = [((WIDTH // 2), (HEIGHT // 2))]
-        self.direction = random.choice([UP, DOWN, LEFT, RIGHT])
 
     def render(self, surface):
         for p in self.positions:

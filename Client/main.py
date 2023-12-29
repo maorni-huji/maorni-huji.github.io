@@ -8,6 +8,7 @@ import logging
 from datetime import datetime
 import hashlib
 from os.path import isfile
+import os
 
 # TODO:
 # 1. Change the hash to the updated snake_platform.py hash
@@ -164,7 +165,7 @@ def main():
     def on_run_game(opponent_script_path, is_real):
         # make sure that the snake_platform file wasn't changed
         with open("snake_platform.py", "r") as snake_platform_file:
-            if sha256_hash(snake_platform_file.read().encode()) != '671d0d7a76b533c9e3be4e23683b066d52b60aac4ee7b8ed8cc2aa7b9a36d3bb':  # CHANGE THIS
+            if sha256_hash(snake_platform_file.read().encode()) != '5cc3c8ddb0d3f4bd6e86ddc254440ccd00d15ba2eaf07aa1a681b84ef1caa266':  # CHANGE THIS
                 if not is_real:
                     label1.config(text="Oops!\nIt seems like snake_platform.py was accidentally edited.\nTry to re-download the file from GitHub", foreground="#ff6666")
                 else:

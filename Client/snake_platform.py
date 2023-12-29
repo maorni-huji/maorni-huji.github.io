@@ -85,7 +85,7 @@ def run_snakes_game(is_real: bool = False):
             direction = your_think(food.copy(), superfood.copy(), blue_snake.copy(), green_snake.copy())
             end = time.time()
             if (end - start >= 0.2):
-                print("Took you long enough... MINUS A POINT TO GRIFFINDOR (a.k.a your snake)")
+                print("Took you long enough... MINUS A POINT TO GRIFFINDOR (a.k.a host)")
                 blue_snake.score-=1
             else:
                 blue_snake.direction = direction
@@ -97,7 +97,7 @@ def run_snakes_game(is_real: bool = False):
             direction = opponent_think(food.copy(), superfood.copy(), green_snake.copy(), blue_snake.copy())
             end = time.time()
             if end - start >= 0.2:
-                print("Took you long enough... MINUS A POINT TO GRIFFINDOR (a.k.a your snake)")
+                print("Took you long enough... MINUS A POINT TO GRIFFINDOR (a.k.a your guest)")
                 blue_snake.score-=1
             else:
                 green_snake.direction = direction
@@ -105,8 +105,11 @@ def run_snakes_game(is_real: bool = False):
             print(f"Function raised an exception: {e}")
             
         # Checking to see both snakes are still alive.
-        blue_positions = blue_snake.positions
-        run = blue_snake.update(green_snake.positions) and green_snake.update(blue_positions)
+        blue_copy = blue_snake.copy()
+        blue_copy.update_just_positions(green_snake.positions)
+        green_copy = green_snake.copy()
+        green_copy.update_just_positions(blue_snake.positions)
+        run = blue_snake.update(green_copy.positions) and green_snake.update(blue_copy.positions)
         # use the values in the correct time, tail-to-tail is ok
         
         # Checking to see if a snake ate an apple.
@@ -150,14 +153,13 @@ def run_snakes_game(is_real: bool = False):
             log_actions(blue_snake.direction, green_snake.direction, blue_food, green_food, blue_snake.score, green_snake.score)
 
         # Rendering everything to the screen.
-        if run:
-            surface.fill(BLACK)
-            blue_snake.render(surface)
-            green_snake.render(surface)
-            food.render(surface)
-            superfood.render(surface)
-            screen.blit(surface, (0, 0))
-            pygame.display.update()
+        surface.fill(BLACK)
+        blue_snake.render(surface)
+        green_snake.render(surface)
+        food.render(surface)
+        superfood.render(surface)
+        screen.blit(surface, (0, 0))
+        pygame.display.update()
         clock.tick(FPS)
     
     # Adding up the final scores, a bonus is given if your snake stays alive.
@@ -173,16 +175,27 @@ def run_snakes_game(is_real: bool = False):
     blue_text_surface = font.render(blue_text, True, BLUE)
     green_text = "The green snakes score is: " + str(green_snake.score)
     green_text_surface = font.render(green_text, True, GREEN)
+    if blue_snake.score > green_snake.score:
+        winner_text = "Host Won!"
+        winner_text_surface = font.render(winner_text, True, BLUE)
+    elif green_snake.score > blue_snake.score:
+        winner_text = "Guest Won!"
+        winner_text_surface = font.render(winner_text, True, GREEN)
+    else:
+        winner_text = "Draw... Play Again!"
+        winner_text_surface = font.render(winner_text, True, WHITE)
 
     # log to file
     if is_real:
         logging.info("THE GAME IS DONE - Blue Snake Score: " + str(blue_snake.score) + ", Green Snake Score: " + str(green_snake.score) + "\n\n")
 
     # Get the rectangle of the text surface
+    winner_text_rect = winner_text_surface.get_rect(center=(WIDTH // 2, HEIGHT // 2 - 200))
     text_rect = blue_text_surface.get_rect(center=(WIDTH // 2, HEIGHT // 2))
     text_rect2 = green_text_surface.get_rect(center=(WIDTH // 2, HEIGHT // 2 + 200))
-    run = True
-    while run:
+    start_time = time.time()
+    while time.time()-start_time <= 5:
+        screen.blit(winner_text_surface, winner_text_rect)
         screen.blit(blue_text_surface, text_rect)
         screen.blit(green_text_surface, text_rect2)
         pygame.display.flip()
