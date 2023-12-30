@@ -229,7 +229,7 @@ def main():
         with open("snake_platform.py", "r") as snake_platform_file:
             # print("sha256: ", sha256_hash(snake_platform_file.read().encode()))
 
-            if sha256_hash(snake_platform_file.read().encode()) != '738dba302d1ea0dc99a16f92eba81b5e2e5399646627869a9ffe2b1481f4f4ac':  # CHANGE THIS
+            if sha256_hash(snake_platform_file.read().encode()) != '158752a2cef0f860e667a2af0370eae238e0fb7200317702f5ed9372205ba1e7':  # CHANGE THIS
                 if not is_real:
                     label1.config(text="Oops!\nIt seems like snake_platform.py was accidentally edited.\nTry to re-download the file from GitHub", foreground="#ff6666")
                 else:

@@ -7,6 +7,7 @@ from classes import RIGHT, LEFT, UP, DOWN
 import your_snake
 import logging
 import time
+
 # TODO:
 # 0. Can someone eat just one apple and kill himself, and this way to win the game? Is it ok for us?
 # 1. Validate return values of the 'think' functions
@@ -37,7 +38,7 @@ BLUE = (0, 0, 255)
 
 HOST_WINS, OPPONENT_WINS = 0, 1
 
-ALLOWED_DIRECTIONS = [UP, DOWN, LEFT, RIGHT, (1,1), (1,-1), (-1,1), (-1,-1)]
+ALLOWED_DIRECTIONS = [UP, DOWN, LEFT, RIGHT, (1, 1), (1, -1), (-1, 1), (-1, -1)]
 
 
 def run_snakes_game(is_real: bool = False):
@@ -51,7 +52,8 @@ def run_snakes_game(is_real: bool = False):
         import opponent_snake  # real opponent snake - do not touch!
         opponent_think = opponent_snake.think
     else:
-        import default_snake  # demo snake for training, you are allowed to edit default_snake.py for demonstrating possible opponents!
+        import \
+            default_snake  # demo snake for training, you are allowed to edit default_snake.py for demonstrating possible opponents!
         opponent_think = default_snake.think
 
     # Initializing all the objects required for pygame.
@@ -63,12 +65,12 @@ def run_snakes_game(is_real: bool = False):
     tick = 0
 
     # Initializing the game objects.
-    blue_snake = classes.Snake((60,60), BLUE)  # the host is the blue Snake, the opponent is the Green one
-    green_snake = classes.Snake((540,540), GREEN)
+    blue_snake = classes.Snake((60, 60), BLUE)  # the host is the blue Snake, the opponent is the Green one
+    green_snake = classes.Snake((540, 540), GREEN)
     food = classes.Food()
     superfood = classes.Superfood()
     run = True
-    
+
     # Running the game.
     while run and (tick < 900 or blue_snake.score == green_snake.score):
         tick += 1
@@ -78,8 +80,8 @@ def run_snakes_game(is_real: bool = False):
                 pygame.quit()
                 sys.exit()
         blue_food = green_food = classes.NO_APPLE
-        
-        #Letting the snakes make their next move.
+
+        # Letting the snakes make their next move.
         try:
             start = time.time()
             direction = your_think(food.copy(), superfood.copy(), blue_snake.copy(), green_snake.copy())
@@ -93,7 +95,7 @@ def run_snakes_game(is_real: bool = False):
                 raise Exception("Host direction given isn't in allowed values")
         except Exception as e:
             print(f"Function raised an exception: {e}")
-            
+
         try:
             start = time.time()
             direction = opponent_think(food.copy(), superfood.copy(), green_snake.copy(), blue_snake.copy())
@@ -107,15 +109,17 @@ def run_snakes_game(is_real: bool = False):
                 raise Exception("Guest direction given isn't in allowed values")
         except Exception as e:
             print(f"Function raised an exception: {e}")
-            
+
         # Checking to see both snakes are still alive.
         blue_copy = blue_snake.copy()
         blue_copy.update_just_positions(green_snake.positions)
         green_copy = green_snake.copy()
         green_copy.update_just_positions(blue_snake.positions)
-        run = blue_snake.update(green_copy.positions) and green_snake.update(blue_copy.positions)
+        blue_run = blue_snake.update(green_copy.positions)
+        green_run = green_snake.update(blue_copy.positions)
+        run = blue_run and green_run
         # use the values in the correct time, tail-to-tail is ok
-        
+
         # Checking to see if a snake ate an apple.
         if blue_snake.get_head_position() == food.position:
             blue_snake.length += 1
@@ -127,12 +131,12 @@ def run_snakes_game(is_real: bool = False):
             green_snake.score += 1
             food.randomize_position()
             green_food = classes.RED_APPLE
-            
+
         # Checking to see if a snake ate the superfood.
         if blue_snake.get_head_position() == superfood.position and superfood.is_hidden == False:
             blue_snake.length += 5
             blue_snake.score += 5
-            superfood_timer = 0 
+            superfood_timer = 0
             superfood.hide()
             blue_food = classes.SUPERFOOD
         elif green_snake.get_head_position() == superfood.position and superfood.is_hidden == False:
@@ -141,20 +145,21 @@ def run_snakes_game(is_real: bool = False):
             superfood_timer = 0
             superfood.hide()
             green_food = classes.SUPERFOOD
-            
+
         # Creating a new superfood.
-        if superfood_timer%100 == 0 and superfood.is_hidden == True:
+        if superfood_timer % 100 == 0 and superfood.is_hidden == True:
             superfood_timer = 1
             superfood.uncover()
-        
+
         # Destroying the superfood if too much time has passed.
-        if superfood_timer%50 == 0 and superfood.is_hidden == False:
+        if superfood_timer % 50 == 0 and superfood.is_hidden == False:
             superfood_timer = 1
             superfood.hide()
 
         # log the actions to actions.log
         if is_real:
-            log_actions(blue_snake.direction, green_snake.direction, blue_food, green_food, blue_snake.score, green_snake.score)
+            log_actions(blue_snake.direction, green_snake.direction, blue_food, green_food, blue_snake.score,
+                        green_snake.score)
 
         # Rendering everything to the screen.
         surface.fill(BLACK)
@@ -165,13 +170,13 @@ def run_snakes_game(is_real: bool = False):
         screen.blit(surface, (0, 0))
         pygame.display.update()
         clock.tick(FPS)
-    
+
     # Adding up the final scores, a bonus is given if your snake stays alive.
-    if(blue_snake.is_alive):
+    if (blue_snake.is_alive):
         blue_snake.score += 20
-    if(green_snake.is_alive):
+    if (green_snake.is_alive):
         green_snake.score += 20
-        
+
     # Displaying the scores.
     font = pygame.font.Font(None, 36)
     # Create a text surface
@@ -191,14 +196,15 @@ def run_snakes_game(is_real: bool = False):
 
     # log to file
     if is_real:
-        logging.info("THE GAME IS DONE - Blue Snake Score: " + str(blue_snake.score) + ", Green Snake Score: " + str(green_snake.score) + "\n\n")
+        logging.info("THE GAME IS DONE - Blue Snake Score: " + str(blue_snake.score) + ", Green Snake Score: " + str(
+            green_snake.score) + "\n\n")
 
     # Get the rectangle of the text surface
     winner_text_rect = winner_text_surface.get_rect(center=(WIDTH // 2, HEIGHT // 2 - 200))
     text_rect = blue_text_surface.get_rect(center=(WIDTH // 2, HEIGHT // 2))
     text_rect2 = green_text_surface.get_rect(center=(WIDTH // 2, HEIGHT // 2 + 200))
     start_time = time.time()
-    while time.time()-start_time <= 3:
+    while time.time() - start_time <= 3:
         screen.blit(winner_text_surface, winner_text_rect)
         screen.blit(blue_text_surface, text_rect)
         screen.blit(green_text_surface, text_rect2)
@@ -225,5 +231,8 @@ def log_actions(blue_snake_dir: tuple[int, int], green_snake_dir: tuple[int, int
     :param green_score: Same for the green snake
     :return: None
     """
-    logging.info("Blue Direction: " + str(blue_snake_dir) + ", Blue Food: " + classes.APPLES[blue_food] + ", Blue Score: " + str(blue_score) + "\n"
-                 "    Green Direction: " + str(green_snake_dir) + ", Green Food: " + classes.APPLES[green_food] + ", Green Score: " + str(green_score))
+    logging.info(
+        "Blue Direction: " + str(blue_snake_dir) + ", Blue Food: " + classes.APPLES[blue_food] + ", Blue Score: " + str(
+            blue_score) + "\n"
+                          "    Green Direction: " + str(green_snake_dir) + ", Green Food: " + classes.APPLES[
+            green_food] + ", Green Score: " + str(green_score))
