@@ -11,7 +11,8 @@ import hashlib
 from os.path import isfile
 from snake_platform import HOST_WINS, OPPONENT_WINS
 
-WHO_WON_FORMS_LINK = r"https://forms.gle/49FchrWEK4fFDqqV6"
+# WHO_WON_FORMS_LINK = r"https://forms.gle/49FchrWEK4fFDqqV6"
+WHO_WON_FORMS_LINK = r"https://forms.gle/c7Ug7GEgzZ1mQYtR8"
 SNAKES_COLOSSEUM_URL = r"https://drive.google.com/drive/folders/1sJMEhsJzmbQkYU-9tGrXqqiutBIZ5t3x?usp=sharing"
 
 # TODO:
@@ -190,15 +191,15 @@ def main():
                                style=run_button_style)
     button1.grid(row=6, column=0, pady=10, padx=10)
 
-    button2 = ttk.Button(main_frame, text="1. Who is My Opponent?", command=lambda url="https://forms.gle/49FchrWEK4fFDqqV6": open_in_google(url),
-                                     style=button_style)
-    button2.grid(row=7, column=0, pady=10, padx=10)
+    # button2 = ttk.Button(main_frame, text="1. Who is My Opponent?", command=lambda url="https://forms.gle/49FchrWEK4fFDqqV6": open_in_google(url),
+    #                                  style=button_style)
+    # button2.grid(row=7, column=0, pady=10, padx=10)
 
-    button3 = ttk.Button(main_frame, text="2. Download Opponent's Snake", command=lambda url=SNAKES_COLOSSEUM_URL: open_in_google(url),
+    button3 = ttk.Button(main_frame, text="View All Snakes Archive", command=lambda url=SNAKES_COLOSSEUM_URL: open_in_google(url),
                                      style=button_style)
     button3.grid(row=8, column=0, pady=10, padx=10)
 
-    button4 = ttk.Button(main_frame, text="3. Upload Opponent's Snake", command=None, style="button4.TButton")
+    button4 = ttk.Button(main_frame, text="Upload Opponent's Snake", command=None, style="button4.TButton")
     button4.config(command=lambda button=button4: browse_file(button, entry_var))
     button4.grid(row=10, column=0, pady=10, padx=10)
 
@@ -228,7 +229,7 @@ def main():
         with open("snake_platform.py", "r") as snake_platform_file:
             # print("sha256: ", sha256_hash(snake_platform_file.read().encode()))
 
-            if sha256_hash(snake_platform_file.read().encode()) != '874a3cd7592ef2d7d1c6d7001ec465e3d3417db287783bd4b885872000af0b4a':  # CHANGE THIS
+            if sha256_hash(snake_platform_file.read().encode()) != '738dba302d1ea0dc99a16f92eba81b5e2e5399646627869a9ffe2b1481f4f4ac':  # CHANGE THIS
                 if not is_real:
                     label1.config(text="Oops!\nIt seems like snake_platform.py was accidentally edited.\nTry to re-download the file from GitHub", foreground="#ff6666")
                 else:

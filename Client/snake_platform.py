@@ -198,7 +198,7 @@ def run_snakes_game(is_real: bool = False):
     text_rect = blue_text_surface.get_rect(center=(WIDTH // 2, HEIGHT // 2))
     text_rect2 = green_text_surface.get_rect(center=(WIDTH // 2, HEIGHT // 2 + 200))
     start_time = time.time()
-    while time.time()-start_time <= 5:
+    while time.time()-start_time <= 3:
         screen.blit(winner_text_surface, winner_text_rect)
         screen.blit(blue_text_surface, text_rect)
         screen.blit(green_text_surface, text_rect2)
