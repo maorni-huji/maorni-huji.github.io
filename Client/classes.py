@@ -112,6 +112,7 @@ class Superfood():
         superfood.position = self.position
         superfood.color = self.color
         superfood.is_hidden = self.is_hidden
+        return superfood
 
     def set_food_color(self, color):
         self.color = color
