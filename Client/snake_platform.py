@@ -89,7 +89,7 @@ def run_snakes_game(is_real: bool = False):
             if end - start >= 0.2:
                 print("Took you long enough... MINUS A POINT TO GRIFFINDOR (a.k.a host)")
                 blue_snake.score -= 1
-            elif direction in ALLOWED_DIRECTIONS:
+            elif direction in ALLOWED_DIRECTIONS and direction != blue_snake.direction:
                 blue_snake.direction = direction
             else:
                 raise Exception("Host direction given isn't in allowed values")
@@ -103,7 +103,7 @@ def run_snakes_game(is_real: bool = False):
             if end - start >= 0.2:
                 print("Took you long enough... MINUS A POINT TO GRIFFINDOR (a.k.a your guest)")
                 green_snake.score -= 1
-            elif direction in ALLOWED_DIRECTIONS:
+            elif direction in ALLOWED_DIRECTIONS and direction != green_snake.direction:
                 green_snake.direction = direction
             else:
                 raise Exception("Guest direction given isn't in allowed values")
