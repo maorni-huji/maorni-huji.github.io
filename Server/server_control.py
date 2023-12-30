@@ -75,11 +75,6 @@ def server_auto_control():
           r"*  NOTE: When dealing with local files, always close them after entering data, so the code can access them")
     wait()
 
-    # pair the participants randomly
-    tournament.fetch_participants()
-    print(" >> Alright, the participants are in - now it's time to pair them! Luckily, it was just done\n"
-          " >> Starting the Game!")
-
     # start the game loop
     i = 1
     the_winner = tournament.is_done()
@@ -125,15 +120,32 @@ def server_auto_control():
 
     print("Congratulations! The winner is", the_winner.group_name)
 
-#print("  > Alright, now - copy the file index.html to InfinityFree (https://dash.infinityfree.com/accounts) > File Manager,\n"
-        #      "    and then tell them that the link https://maornimri45.infinityfreeapp.com/ is updated")
-        #wait()
 
-        # print(r"  > Alright, now - publishing the competitors! Some GitHub uploads would run automatically")
-        # tournament.publish_pairs(odd_player=odd_player, html_file_path=INDEX_HTML_PATH,
-        #                          upload_to_github=True, game_token=game_token, stage_num=i)
-        # print(r"  > Send everyone to refresh the link https://maorni-huji.github.io/ so they can see who they are playing against")
-        # wait()
+def server_quick_control():
+    """
+    Only splits the participants into pairs and prints instructions on the screen
+    :return: None
+    """
+    tournament = Tournament()
+
+    print(" >> Welcome to Server Auto Control - New\n"
+          "    To start, make sure that participants.xlsx contains all of the participants' names")
+    wait()
+    tournament.fetch_participants()  # pair the participants randomly
+
+    print(" >> Alright, the participants are in - now it's time to pair them! The pairs are:")
+    tournament.update_google_form()
+    print(r" >> Now:" + "\n"
+          r" >> 1. Enter https://challonge.com/tournament/bracket_generator and create a new Double-Elimination tournament" + "\n"
+          " >> 2. Copy the pairs from above and print them in the players segment, then continue the process and run the tournament\n"
+          " >> 3. Check the box \"1 match\" in Settings -> Grand Finals\n"
+          " >> 4. Copy the tournament's address\n"
+          r" >> 5. Put that address in https://docs.google.com/forms/ both in the heading and in question 1" + "\n"                                                                                                                                        
+          r" >> 6. Make sure there are no comments in the Google forms and in https://docs.google.com/spreadsheets/d/1SqH0sKSNJUqZslUzuj1489p5yemyMvLKWzZWHDWExVM/edit?resourcekey#gid=2132861224")
+    wait()
+
+    print("Alright, the tournament is ready - open the Excel file in (7) and the tournament in another tab, and follow answers")
+
 
 def wait(continue_letter: str = 'Y'):
     """

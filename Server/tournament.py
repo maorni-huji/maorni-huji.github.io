@@ -21,7 +21,11 @@ import os
 # (Not updated) GitHub Website:
 # https://maorni-huji.github.io/
 # edit the website by editing index.html and push it to GitHub (maorni-huji.github.io)
-
+#
+# Updated Tournament Form:
+# publish - https://forms.gle/c7Ug7GEgzZ1mQYtR8
+# Excel results - https://docs.google.com/spreadsheets/d/1SqH0sKSNJUqZslUzuj1489p5yemyMvLKWzZWHDWExVM/edit?resourcekey#gid=2132861224
+# edit - https://docs.google.com/forms/d/1YGYL9bb9_wkG4danlhpTORijUZI1W9A_pvNJww767o0/edit
 
 class Competitor:
     DEFAULT_PARTICIPANTS = r"C:\Users\TLP-001\PycharmProjects\ShabatMadat\Server\participants.xlsx"
@@ -38,7 +42,7 @@ class Competitor:
 
     @staticmethod
     def edit_group_name(comp_names: list[str]):
-        return "הקבוצה של: " + ", ".join(comp_names)
+        return ", ".join(comp_names)
 
     def __str__(self):
         return self.group_name
@@ -67,8 +71,6 @@ class Tournament:
         for i in range(len(content["איך קוראים לך?"])):
             if isinstance(content["איך קוראים לך?"][i], str):
                 comp_names += [content["איך קוראים לך?"][i]]
-            # comp_names = [user for user in [content["משתתף 1"][i], content["משתתף 2"][i], content["משתתף 3 (רק באישור שלנו)"][i]] if isinstance(user, str)]
-            # self.participants_in += [Competitor(comp_names=comp_names, group_name=content["שם הקבוצה"][i])]
 
         shuffle(comp_names)
 
@@ -160,7 +162,7 @@ class Tournament:
         """
         print("    Competitors who are currently in the game: ")
         for competitors in self.participants_in:
-            print("    " + str(competitors))
+            print(str(competitors))
 
     def fetch_winners(self, file_path=Competitor.DEFAULT_WINNERS, odd_player=None):
         """

@@ -2,7 +2,7 @@ import server_control
 
 
 def main_server():
-    server_control.server_auto_control()
+    server_control.server_quick_control()
 
 
 # Press the green button in the gutter to run the script.
