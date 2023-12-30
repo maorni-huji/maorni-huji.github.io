@@ -227,9 +227,9 @@ def main():
     def on_run_game(opponent_script_path, is_real):
         # make sure that the snake_platform file wasn't changed
         with open("snake_platform.py", "r") as snake_platform_file:
-            # print("sha256: ", sha256_hash(snake_platform_file.read().encode()))
+            # print("sha256: ", sha256_hash(snake_platform_file.read().encodVe()))
 
-            if sha256_hash(snake_platform_file.read().encode()) != '914349cc13e1c62a15d174fc2c40763441acda5d34582a03d82f9386f1ac28de':  # CHANGE THIS
+            if sha256_hash(snake_platform_file.read().encode()) != 'c5791d7fa355b1ef4634f1482eb73322bfb317d380a993f4310a97d6f3e733a9':  # CHANGE THIS
                 if not is_real:
                     label1.config(text="Oops!\nIt seems like snake_platform.py was accidentally edited.\nTry to re-download the file from GitHub", foreground="#ff6666")
                 else:

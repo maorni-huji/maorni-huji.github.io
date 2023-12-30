@@ -35,6 +35,13 @@ class Snake:
         self.is_alive = True
         self.score = 0
 
+    def opposite_direction(self):
+        x = self.direction[0]
+        y = self.direction[1]
+        x = -x
+        y = -y
+        return x, y
+
     def copy(self):
         snake = Snake((0, 0), (0, 0, 0))
         snake.length = self.length

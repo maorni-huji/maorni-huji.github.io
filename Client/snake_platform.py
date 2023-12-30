@@ -86,10 +86,12 @@ def run_snakes_game(is_real: bool = False):
             start = time.time()
             direction = your_think(food.copy(), superfood.copy(), blue_snake.copy(), green_snake.copy())
             end = time.time()
+            if is_real:
+                logging.info("host action time: " + str(end - start))
             if end - start >= 0.2:
                 print("Took you long enough... MINUS A POINT TO GRIFFINDOR (a.k.a host)")
                 blue_snake.score -= 1
-            elif direction in ALLOWED_DIRECTIONS and direction != blue_snake.direction:
+            elif direction in ALLOWED_DIRECTIONS and direction != blue_snake.opposite_direction():
                 blue_snake.direction = direction
             else:
                 raise Exception("Host direction given isn't in allowed values")
@@ -100,10 +102,12 @@ def run_snakes_game(is_real: bool = False):
             start = time.time()
             direction = opponent_think(food.copy(), superfood.copy(), green_snake.copy(), blue_snake.copy())
             end = time.time()
+            if is_real:
+                logging.info("guest action time: " + str(end - start))
             if end - start >= 0.2:
                 print("Took you long enough... MINUS A POINT TO GRIFFINDOR (a.k.a your guest)")
                 green_snake.score -= 1
-            elif direction in ALLOWED_DIRECTIONS and direction != green_snake.direction:
+            elif direction in ALLOWED_DIRECTIONS and direction != green_snake.opposite_direction():
                 green_snake.direction = direction
             else:
                 raise Exception("Guest direction given isn't in allowed values")
